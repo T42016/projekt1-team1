@@ -16,15 +16,10 @@ namespace Quizz_T4
         {
             InitializeComponent();
         }
-
-        private void btnAnsr3_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void btnStart_Click(object sender, EventArgs e)
         {
-
+        
         }
     }
 }
