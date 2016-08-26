@@ -14,8 +14,8 @@ namespace Quizz_T4
     public partial class Form1 : Form
     {
         static int iteration = 1;
-        string filename = "quizz" + iteration;
-        
+
+
 
         List<Query> questions = new List<Query>();
         List<Answers> answers = new List<Answers>();
@@ -25,6 +25,7 @@ namespace Quizz_T4
             InitializeComponent();
  
         }
+        
         
         private void btnStart_Click(object sender, EventArgs e)
         {
@@ -36,29 +37,43 @@ namespace Quizz_T4
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
-                    questions.Add(new Query(rtbnQuestion.Text));
-                    answers.Add(new Answers(tbxAnswer1.Text, tbxAnswer2.Text, tbxAnswer3.Text, tbxAnswer4.Text));
-                    Save();
-                    iteration++;
+
+            questions.Add(new Query(rtbnQuestion.Text));
+            answers.Add(new Answers(tbxAnswer1.Text, tbxAnswer2.Text, tbxAnswer3.Text, tbxAnswer4.Text));
+            Save();
 
         }
 
         private void Save()
         {
+            string questionfile = tbxQuizzName.Text + "_question" + ".quizz";
+
+            if (iteration > 3)
+            {
+                iteration++;
+                return;
+            }
             string questionlist = "";
             string answerlist = "";
-            foreach (Query item in questions)
-            {
-                questionlist += item.Question + "\r\n"; //Här spara jag den nya boken.
-            }
+            
+            
+                foreach (Query item in questions)
+                {
+                    questionlist += item.Question + "\r\n"; //Här spara jag den nya boken.
+                }
 
-            foreach (Answers item in answers)
-            {
-                answerlist += item.Answer1 + "|" + item.Answer2 + "|" + item.Answer3 + "|" + item.Answer4 + "\r\n"; //Här spara jag den nya boken.
-            }
+                foreach (Answers item in answers)
+                {
+                    answerlist += item.Answer1 + "|" + item.Answer2 + "|" + item.Answer3 + "|" + item.Answer4 + "\r\n"; //Här spara jag den nya boken.
+                }
 
-            File.WriteAllText(@"question.txt", questionlist);
-            File.WriteAllText(@"answers.txt", answerlist);
+                File.WriteAllText(questionfile, questionlist);
+                iteration++;
+                File.WriteAllText(@"answers.txt", answerlist);
+                MessageBox.Show("test");
+
+            
+
 
         }
 
@@ -76,6 +91,18 @@ namespace Quizz_T4
             }
         }
 
-        
+        private void tbxAnswer1_Click(object sender, EventArgs e)
+        {
+            tbxAnswer1.Text = "";
+        }
+
+        private void tbxAnswer1_Leave(object sender, EventArgs e)
+        {
+            if (tbxAnswer1.Text != ""){
+
+            }
+            else
+             tbxAnswer1.Text = "Correct Answer";
+        }
     }
 }
