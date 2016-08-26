@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tc = new System.Windows.Forms.TabControl();
             this.tabMenu = new System.Windows.Forms.TabPage();
             this.btnStart = new System.Windows.Forms.Button();
@@ -50,6 +51,8 @@
             this.lblAnswer1 = new System.Windows.Forms.Label();
             this.tbxAnswer1 = new System.Windows.Forms.TextBox();
             this.lblQuestion = new System.Windows.Forms.Label();
+            this.timer30s = new System.Windows.Forms.Timer(this.components);
+            this.prgBar30s = new System.Windows.Forms.ProgressBar();
             this.tc.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.tabQuiz.SuspendLayout();
@@ -65,7 +68,7 @@
             this.tc.Margin = new System.Windows.Forms.Padding(2);
             this.tc.Name = "tc";
             this.tc.SelectedIndex = 0;
-            this.tc.Size = new System.Drawing.Size(250, 397);
+            this.tc.Size = new System.Drawing.Size(250, 432);
             this.tc.TabIndex = 0;
             // 
             // tabMenu
@@ -75,7 +78,7 @@
             this.tabMenu.Margin = new System.Windows.Forms.Padding(2);
             this.tabMenu.Name = "tabMenu";
             this.tabMenu.Padding = new System.Windows.Forms.Padding(2);
-            this.tabMenu.Size = new System.Drawing.Size(242, 371);
+            this.tabMenu.Size = new System.Drawing.Size(242, 406);
             this.tabMenu.TabIndex = 0;
             this.tabMenu.Text = "Menu";
             this.tabMenu.UseVisualStyleBackColor = true;
@@ -93,6 +96,7 @@
             // 
             // tabQuiz
             // 
+            this.tabQuiz.Controls.Add(this.prgBar30s);
             this.tabQuiz.Controls.Add(this.rtbxQuestion);
             this.tabQuiz.Controls.Add(this.btnAnsr4);
             this.tabQuiz.Controls.Add(this.btnAnsr3);
@@ -102,7 +106,7 @@
             this.tabQuiz.Margin = new System.Windows.Forms.Padding(2);
             this.tabQuiz.Name = "tabQuiz";
             this.tabQuiz.Padding = new System.Windows.Forms.Padding(2);
-            this.tabQuiz.Size = new System.Drawing.Size(242, 371);
+            this.tabQuiz.Size = new System.Drawing.Size(242, 406);
             this.tabQuiz.TabIndex = 1;
             this.tabQuiz.Text = "Quiz";
             this.tabQuiz.UseVisualStyleBackColor = true;
@@ -174,7 +178,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(242, 371);
+            this.tabPage1.Size = new System.Drawing.Size(242, 406);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Kia grejor";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -279,11 +283,23 @@
             this.lblQuestion.TabIndex = 1;
             this.lblQuestion.Text = "Question";
             // 
+            // timer30s
+            // 
+            this.timer30s.Interval = 1000;
+            this.timer30s.Tick += new System.EventHandler(this.timer30s_Tick);
+            // 
+            // prgBar30s
+            // 
+            this.prgBar30s.Location = new System.Drawing.Point(7, 371);
+            this.prgBar30s.Name = "prgBar30s";
+            this.prgBar30s.Size = new System.Drawing.Size(230, 23);
+            this.prgBar30s.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(251, 398);
+            this.ClientSize = new System.Drawing.Size(251, 435);
             this.Controls.Add(this.tc);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
@@ -321,6 +337,8 @@
         private System.Windows.Forms.RichTextBox rtbnQuestion;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lblCorrectAnswer;
+        private System.Windows.Forms.Timer timer30s;
+        private System.Windows.Forms.ProgressBar prgBar30s;
     }
 }
 
