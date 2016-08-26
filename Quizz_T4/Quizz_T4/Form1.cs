@@ -15,7 +15,6 @@ namespace Quizz_T4
     {
         static int iteration = 1;
         string filename = "quizz" + iteration;
-        string rightAnswer;
         
 
         List<Query> questions = new List<Query>();
@@ -38,7 +37,7 @@ namespace Quizz_T4
         {
 
                     questions.Add(new Query(rtbnQuestion.Text));
-                    answer.Add(new Answers(tbxAnswer1.Text, tbxAnswer2.Text, tbxAnswer3.Text, tbxAnswer4.Text));
+                    answers.Add(new Answers(tbxAnswer1.Text, tbxAnswer2.Text, tbxAnswer3.Text, tbxAnswer4.Text));
                     Save();
                     iteration++;
 
@@ -53,7 +52,7 @@ namespace Quizz_T4
                 questionlist += item.Question + "\r\n"; //Här spara jag den nya boken.
             }
 
-            foreach (Answers item in answer)
+            foreach (Answers item in answers)
             {
                 answerlist += item.Answer1 + "|" + item.Answer2 + "|" + item.Answer3 + "|" + item.Answer4 + "\r\n"; //Här spara jag den nya boken.
             }
