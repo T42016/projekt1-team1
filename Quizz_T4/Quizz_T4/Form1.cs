@@ -16,10 +16,11 @@ namespace Quizz_T4
         static int iteration = 1;
         string filename = "quizz" + iteration;
         int i = 1;
+        string rightAnswer;
         
 
         List<Query> questions = new List<Query>();
-        List<Answers> answer = new List<Answers>();
+        List<Answers> answers = new List<Answers>();
 
         public Form1()
         {
@@ -31,6 +32,7 @@ namespace Quizz_T4
         {
             timer30s.Start();
             tc.SelectedTab = tabQuiz;
+            string[,] information = new string[10, 6];
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
