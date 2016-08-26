@@ -13,7 +13,7 @@ namespace Quizz_T4
 {
     public partial class Form1 : Form
     {
-        int iteration = 1;
+        static int iteration = 1;
         string filename = "quizz" + iteration;
         int i = 1;
 
@@ -34,9 +34,8 @@ namespace Quizz_T4
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
-            if (i > 10)
+            if (i < 10)
             {
-                i++;
                 questions.Add(new Query(rtbnQuestion.Text));
                 answer.Add(new Answers(tbxAnswer1.Text, tbxAnswer2.Text, tbxAnswer3.Text, tbxAnswer4.Text));
                 Save();
@@ -69,7 +68,7 @@ namespace Quizz_T4
                 answerlist += item.Answer1 + "|" + item.Answer2 + "|" + item.Answer3 + "|" + item.Answer4 + "\r\n"; //Här spara jag den nya boken.
             }
 
-            File.WriteAllText(@filename.txt, questionlist);
+            File.WriteAllText(@"question.txt", questionlist);
             File.WriteAllText(@"answers.txt", answerlist);
 
         }
