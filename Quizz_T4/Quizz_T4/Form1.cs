@@ -15,7 +15,6 @@ namespace Quizz_T4
     {
         static int iteration = 1;
         string filename = "quizz" + iteration;
-        int i = 1;
 
         List<Query> questions = new List<Query>();
         List<Answers> answer = new List<Answers>();
@@ -34,23 +33,10 @@ namespace Quizz_T4
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
-            if (i < 10)
-            {
-                questions.Add(new Query(rtbnQuestion.Text));
-                answer.Add(new Answers(tbxAnswer1.Text, tbxAnswer2.Text, tbxAnswer3.Text, tbxAnswer4.Text));
-                Save();
-                rtbnQuestion.Text = "";
-                tbxAnswer1.Text = "";
-                tbxAnswer2.Text = "";
-                tbxAnswer3.Text = "";
-                tbxAnswer4.Text = "";
-                MessageBox.Show("TEST");
-                if (i == 10)
-                {
-                    i = 1;
+                    questions.Add(new Query(rtbnQuestion.Text));
+                    answer.Add(new Answers(tbxAnswer1.Text, tbxAnswer2.Text, tbxAnswer3.Text, tbxAnswer4.Text));
+                    Save();
                     iteration++;
-                }
-            }
 
         }
 
