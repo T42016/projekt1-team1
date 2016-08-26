@@ -58,14 +58,68 @@ namespace Quizz_T4
             string questionfile = tbxQuizzName.Text + "_question" + ".quizz";
             string answerfile = tbxQuizzName.Text + "_answer" + ".quizz";
 
-            if (tbxAnswer1.Text.Contains("") || tbxAnswer2.Text.Contains("") || tbxAnswer3.Text.Contains("") || tbxAnswer4.Text.Contains("") || rtbnQuestion.Text.Contains("") || tbxQuizzName.Text.Contains(""))
+            if (tbxAnswer1.Text == "" || tbxAnswer2.Text == "" || tbxAnswer3.Text == "" || tbxAnswer4.Text == "" || rtbnQuestion.Text == "" || tbxQuizzName.Text == "")
             {
                 MessageBox.Show("You have to fill in all the fields");
+                if (tbxAnswer1.Text == "")
+                {
+                    lblError3.Visible = true;
+                }
+                else if (tbxAnswer2.Text == "")
+                {
+                    lblError4.Visible = true;
+                }
+                else if (tbxAnswer3.Text == "")
+                {
+                    lblError5.Visible = true;
+                }
+                else if (tbxAnswer4.Text == "")
+                {
+                    lblError6.Visible = true;
+                }
+                else if (tbxQuizzName.Text == "")
+                {
+                    lblError1.Visible = true;
+                }
+                else if (rtbnQuestion.Text == "")
+                {
+                    lblError2.Visible = true;
+                }
             }
 
             else if (tbxAnswer1.Text.Contains("|") || tbxAnswer2.Text.Contains("|") || tbxAnswer3.Text.Contains("|") || tbxAnswer4.Text.Contains("|") || rtbnQuestion.Text.Contains("|") || tbxQuizzName.Text.Contains("|"))
             {
                 MessageBox.Show("You cant use the '|' sign");
+                if (tbxAnswer1.Text.Contains("|"))
+                {
+                    tbxAnswer1.Text = "";
+                    lblError3.Visible = true;
+                }
+                else if (tbxAnswer2.Text.Contains("|"))
+                {
+                    tbxAnswer2.Text = "";
+                    lblError4.Visible = true;
+                }
+                else if (tbxAnswer3.Text.Contains("|"))
+                {
+                    tbxAnswer3.Text = "";
+                    lblError5.Visible = true;
+                }
+                else if (tbxAnswer4.Text.Contains("|"))
+                {
+                    tbxAnswer4.Text = "";
+                    lblError6.Visible = true;
+                }
+                else if (tbxQuizzName.Text.Contains("|"))
+                {
+                    tbxQuizzName.Text = "";
+                    lblError1.Visible = true;
+                }
+                else if (rtbnQuestion.Text.Contains("|"))
+                {
+                    rtbnQuestion.Text = "";
+                    lblError2.Visible = true;
+                }
             }
             else
             {
@@ -84,6 +138,7 @@ namespace Quizz_T4
                 }
                 string questionlist = "";
                 string answerlist = "";
+                string name = tbxQuizzName.Text;
 
 
                 foreach (Query item in questions)
@@ -99,7 +154,7 @@ namespace Quizz_T4
                 File.WriteAllText(questionfile, questionlist);
                 File.WriteAllText(answerfile, answerlist);
                 iteration++;
-                MessageBox.Show("test");
+                MessageBox.Show("New question has been added to " + name);
             }
         }
 

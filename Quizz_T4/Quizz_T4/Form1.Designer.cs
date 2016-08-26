@@ -63,6 +63,12 @@
             this.tbxAnswer1 = new System.Windows.Forms.TextBox();
             this.lblQuestion = new System.Windows.Forms.Label();
             this.timer30s = new System.Windows.Forms.Timer(this.components);
+            this.lblError1 = new System.Windows.Forms.Label();
+            this.lblError2 = new System.Windows.Forms.Label();
+            this.lblError3 = new System.Windows.Forms.Label();
+            this.lblError4 = new System.Windows.Forms.Label();
+            this.lblError5 = new System.Windows.Forms.Label();
+            this.lblError6 = new System.Windows.Forms.Label();
             this.tc.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.tabQuiz.SuspendLayout();
@@ -219,6 +225,12 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.lblError6);
+            this.tabPage1.Controls.Add(this.lblError5);
+            this.tabPage1.Controls.Add(this.lblError4);
+            this.tabPage1.Controls.Add(this.lblError3);
+            this.tabPage1.Controls.Add(this.lblError2);
+            this.tabPage1.Controls.Add(this.lblError1);
             this.tabPage1.Controls.Add(this.lblName);
             this.tabPage1.Controls.Add(this.tbxQuizzName);
             this.tabPage1.Controls.Add(this.button2);
@@ -404,6 +416,72 @@
             this.timer30s.Interval = 1000;
             this.timer30s.Tick += new System.EventHandler(this.timer30s_Tick);
             // 
+            // lblError1
+            // 
+            this.lblError1.AutoSize = true;
+            this.lblError1.ForeColor = System.Drawing.Color.Red;
+            this.lblError1.Location = new System.Drawing.Point(186, 23);
+            this.lblError1.Name = "lblError1";
+            this.lblError1.Size = new System.Drawing.Size(11, 13);
+            this.lblError1.TabIndex = 20;
+            this.lblError1.Text = "*";
+            this.lblError1.Visible = false;
+            // 
+            // lblError2
+            // 
+            this.lblError2.AutoSize = true;
+            this.lblError2.ForeColor = System.Drawing.Color.Red;
+            this.lblError2.Location = new System.Drawing.Point(186, 75);
+            this.lblError2.Name = "lblError2";
+            this.lblError2.Size = new System.Drawing.Size(11, 13);
+            this.lblError2.TabIndex = 21;
+            this.lblError2.Text = "*";
+            this.lblError2.Visible = false;
+            // 
+            // lblError3
+            // 
+            this.lblError3.AutoSize = true;
+            this.lblError3.ForeColor = System.Drawing.Color.Red;
+            this.lblError3.Location = new System.Drawing.Point(186, 207);
+            this.lblError3.Name = "lblError3";
+            this.lblError3.Size = new System.Drawing.Size(11, 13);
+            this.lblError3.TabIndex = 22;
+            this.lblError3.Text = "*";
+            this.lblError3.Visible = false;
+            // 
+            // lblError4
+            // 
+            this.lblError4.AutoSize = true;
+            this.lblError4.ForeColor = System.Drawing.Color.Red;
+            this.lblError4.Location = new System.Drawing.Point(186, 233);
+            this.lblError4.Name = "lblError4";
+            this.lblError4.Size = new System.Drawing.Size(11, 13);
+            this.lblError4.TabIndex = 23;
+            this.lblError4.Text = "*";
+            this.lblError4.Visible = false;
+            // 
+            // lblError5
+            // 
+            this.lblError5.AutoSize = true;
+            this.lblError5.ForeColor = System.Drawing.Color.Red;
+            this.lblError5.Location = new System.Drawing.Point(186, 259);
+            this.lblError5.Name = "lblError5";
+            this.lblError5.Size = new System.Drawing.Size(11, 13);
+            this.lblError5.TabIndex = 24;
+            this.lblError5.Text = "*";
+            this.lblError5.Visible = false;
+            // 
+            // lblError6
+            // 
+            this.lblError6.AutoSize = true;
+            this.lblError6.ForeColor = System.Drawing.Color.Red;
+            this.lblError6.Location = new System.Drawing.Point(186, 285);
+            this.lblError6.Name = "lblError6";
+            this.lblError6.Size = new System.Drawing.Size(11, 13);
+            this.lblError6.TabIndex = 25;
+            this.lblError6.Text = "*";
+            this.lblError6.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -458,6 +536,12 @@
         private System.Windows.Forms.ListBox lboxQuestions;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox tbxQuizzName;
+        private System.Windows.Forms.Label lblError6;
+        private System.Windows.Forms.Label lblError5;
+        private System.Windows.Forms.Label lblError4;
+        private System.Windows.Forms.Label lblError3;
+        private System.Windows.Forms.Label lblError2;
+        private System.Windows.Forms.Label lblError1;
     }
 }
 
