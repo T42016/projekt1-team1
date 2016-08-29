@@ -8,7 +8,7 @@ namespace Quizz_T4
 {
     class Shuffler
     {
-        public string[,] Shuffle(string[,] input)
+        public static string[,] Shuffle(string[,] input)
         {
             // Creates array for extra correct answer
             string[,] toShuffle = new string[input.GetLength(0), (input.GetLength(1) + 1)];

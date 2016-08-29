@@ -53,7 +53,7 @@ namespace Quizz_T4
 
             }
 
-            //scrambledInformation =  Scramble(information);
+            scrambledInformation = Shuffler.Shuffle(information);
             for (int x = 0; x < 10; x++)
             {
                 rtbxQuestion.Text = scrambledInformation[x, 0];
