@@ -160,6 +160,33 @@ namespace Quizz_T4
                 MessageBox.Show("New question has been added to " + name);
             }
         }
+        private void load()
+        {
+            string[] answersLines = System.IO.File.ReadAllLines(@"testAnswers.txt");
+
+            foreach (string line in answersLines)
+            {
+                string[] words = line.Split('|');
+
+                Answers answerLoad = new Answers(words[0], words[1], words[2], words[3]);
+
+                answers.Add(answerLoad);
+            }
+
+
+            string[] questionLines = System.IO.File.ReadAllLines(@"testquestions.txt");
+
+            foreach (string line in answersLines)
+            {
+                string[] words = line.Split('|');
+
+                Query questionLoad = new Query(words[0]);
+
+                questions.Add(questionLoad);
+            }
+
+        }
+
 
         private void timer30s_Tick(object sender, EventArgs e)
         {

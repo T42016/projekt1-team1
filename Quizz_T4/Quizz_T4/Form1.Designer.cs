@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.tc = new System.Windows.Forms.TabControl();
             this.tabMenu = new System.Windows.Forms.TabPage();
-            this.btnQuizChoose = new System.Windows.Forms.Button();
+            this.btnChooseQuiz = new System.Windows.Forms.Button();
             this.btnResults = new System.Windows.Forms.Button();
             this.btnQuizCreator = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
@@ -89,7 +89,7 @@
             // 
             // tabMenu
             // 
-            this.tabMenu.Controls.Add(this.btnQuizChoose);
+            this.tabMenu.Controls.Add(this.btnChooseQuiz);
             this.tabMenu.Controls.Add(this.btnResults);
             this.tabMenu.Controls.Add(this.btnQuizCreator);
             this.tabMenu.Controls.Add(this.btnStart);
@@ -102,14 +102,14 @@
             this.tabMenu.Text = "Menu";
             this.tabMenu.UseVisualStyleBackColor = true;
             // 
-            // btnQuizChoose
+            // btnChooseQuiz
             // 
-            this.btnQuizChoose.Location = new System.Drawing.Point(227, 276);
-            this.btnQuizChoose.Name = "btnQuizChoose";
-            this.btnQuizChoose.Size = new System.Drawing.Size(129, 53);
-            this.btnQuizChoose.TabIndex = 3;
-            this.btnQuizChoose.Text = "Välj Quiz";
-            this.btnQuizChoose.UseVisualStyleBackColor = true;
+            this.btnChooseQuiz.Location = new System.Drawing.Point(227, 276);
+            this.btnChooseQuiz.Name = "btnChooseQuiz";
+            this.btnChooseQuiz.Size = new System.Drawing.Size(129, 53);
+            this.btnChooseQuiz.TabIndex = 3;
+            this.btnChooseQuiz.Text = "Choose Quiz";
+            this.btnChooseQuiz.UseVisualStyleBackColor = true;
             // 
             // btnResults
             // 
@@ -117,7 +117,7 @@
             this.btnResults.Name = "btnResults";
             this.btnResults.Size = new System.Drawing.Size(129, 53);
             this.btnResults.TabIndex = 2;
-            this.btnResults.Text = "Tidigare resultat";
+            this.btnResults.Text = "Previous Result";
             this.btnResults.UseVisualStyleBackColor = true;
             // 
             // btnQuizCreator
@@ -136,7 +136,7 @@
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(129, 53);
             this.btnStart.TabIndex = 0;
-            this.btnStart.Text = "Starta Quiz";
+            this.btnStart.Text = "Start Quiz";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
@@ -164,7 +164,7 @@
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(95, 53);
             this.btnQuit.TabIndex = 6;
-            this.btnQuit.Text = "Avbryt Quiz";
+            this.btnQuit.Text = "Abort Quiz";
             this.btnQuit.UseVisualStyleBackColor = true;
             // 
             // prgBar30s
@@ -343,29 +343,29 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(247, 293);
+            this.button2.Location = new System.Drawing.Point(238, 293);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 23);
+            this.button2.Size = new System.Drawing.Size(110, 23);
             this.button2.TabIndex = 17;
-            this.button2.Text = "Lägg till Quiz";
+            this.button2.Text = "Add quiz";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(247, 264);
+            this.button1.Location = new System.Drawing.Point(238, 264);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 23);
+            this.button1.Size = new System.Drawing.Size(110, 23);
             this.button1.TabIndex = 16;
-            this.button1.Text = "Ta bort Fråga";
+            this.button1.Text = "Remove question";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(377, 264);
+            this.btnRemove.Location = new System.Drawing.Point(365, 264);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(75, 23);
+            this.btnRemove.Size = new System.Drawing.Size(110, 23);
             this.btnRemove.TabIndex = 15;
-            this.btnRemove.Text = "Ta bort Quiz";
+            this.btnRemove.Text = "Remove quiz";
             this.btnRemove.UseVisualStyleBackColor = true;
             // 
             // lboxQuiz
@@ -531,7 +531,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Timer timer30s;
         private System.Windows.Forms.ProgressBar prgBar30s;
-        private System.Windows.Forms.Button btnQuizChoose;
+        private System.Windows.Forms.Button btnChooseQuiz;
         private System.Windows.Forms.Button btnResults;
         private System.Windows.Forms.Button btnQuizCreator;
         private System.Windows.Forms.Button btnQuit;
