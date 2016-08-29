@@ -9,8 +9,6 @@ namespace Quizz_T4
 {
     class IsTextValid
     {
-        bool isValid = false;
-
         static public void isTextvalid (Label l, string t)
         {
             if (t.Contains("|"))
