@@ -32,6 +32,26 @@ namespace Quizz_T4
             timer30s.Start();
             tc.SelectedTab = tabQuiz;
             string[,] information = new string[10, 6];
+            string[,] scrambledInformation = new string[10, 6];
+            string[] theAnswers = new string[4];
+
+            for (int a = 0; a < 10; a++)
+            {
+                information[a,0] = questions[a].ToString();
+
+                theAnswers[1] = answers[a].Answer1;
+                theAnswers[2] = answers[a].Answer2;
+                theAnswers[3] = answers[a].Answer3;
+                theAnswers[4] = answers[a].Answer4;
+
+                for (int b = 1; b < 6; b++)
+                {
+                    information[a, b] = theAnswers[b];
+                }
+
+            }
+
+            //scrambledInformation =  Scramble(information);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
