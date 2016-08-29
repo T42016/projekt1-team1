@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Threading;
 
 namespace Quizz_T4
 {
@@ -32,6 +33,7 @@ namespace Quizz_T4
         {
             timer30s.Start();
             tc.SelectedTab = tabQuiz;
+<<<<<<< HEAD
 
             string[,] scrambledInformation = new string[10, 6];
 
@@ -47,6 +49,19 @@ namespace Quizz_T4
 
             }
         }
+=======
+            gboxQuiz.Enabled = false;
+            btnAnsr4.Enabled = false;
+            Thread.Sleep(2000);
+            gboxQuiz.Enabled = true;
+
+            string[,] information = new string[10, 5];
+            string[,] scrambledInformation = new string[10, 6];
+            string[] theAnswers = new string[4];
+        }
+
+
+>>>>>>> feature-back_to_start
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -199,6 +214,11 @@ namespace Quizz_T4
         private void tbxAnswer4_TextChanged(object sender, EventArgs e)
         {
             IsTextValid.isTextvalid(lblError6, tbxAnswer4.Text);
+        }
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            tc.SelectedTab = tabMenu;
         }
 
         private string[,] ReadyInformation()
