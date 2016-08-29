@@ -38,7 +38,7 @@ namespace Quizz_T4
             gboxQuiz.Enabled = true;
 
 
-            string[,] scrambledInformation = new string[10, 6];
+            string[,] scrambledInformation = new string[questions.Count, 6];
 
             scrambledInformation = Shuffler.Shuffle(ReadyInformation());
             for (int x = 0; x < 10; x++)
@@ -146,7 +146,7 @@ namespace Quizz_T4
                 MessageBox.Show("New question has been added to " + name);
             }
         }
-        private void load()
+        private void Load()
         {
             string[] answersLines = System.IO.File.ReadAllLines(@"testAnswers.txt");
 
@@ -236,26 +236,32 @@ namespace Quizz_T4
         private string[,] ReadyInformation()
         {
             //package questions and answers in a two dimentional string array.
-            string[,] information = new string[10, 5];
+            string[,] information = new string[questions.Count, 5];
             string[] theAnswers = new string[4];
 
-            for (int a = 0; a < 10; a++)
+            for (int a = 0; a < questions.Count; a++)
             {
                 information[a, 0] = questions[a].ToString();
 
-                theAnswers[1] = answers[a].Answer1;
-                theAnswers[2] = answers[a].Answer2;
-                theAnswers[3] = answers[a].Answer3;
-                theAnswers[4] = answers[a].Answer4;
+                theAnswers[0] = answers[a].Answer1;
+                theAnswers[1] = answers[a].Answer2;
+                theAnswers[2] = answers[a].Answer3;
+                theAnswers[3] = answers[a].Answer4;
 
-                for (int b = 1; b < 6; b++)
+                for (int b = 1; b < 5; b++)
                 {
-                    information[a, b] = theAnswers[b];
+                    information[a, b] = theAnswers[b-1];
                 }
 
             }
 
             return information;
-        }  
+        }
+
+        private void btnChooseQuiz_Click(object sender, EventArgs e)
+        {
+            Load();
+            MessageBox.Show("bananer");
+        }
     }
 }
