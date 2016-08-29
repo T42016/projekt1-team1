@@ -60,12 +60,22 @@ namespace Quizz_T4
             // Creates output array
             string[,] output = new string[toShuffle.GetLength(0), toShuffle.GetLength(1)];
 
-            // Shuffles array
-            for (int i = 0; i < output.GetLength(0); i++)
+            int i = 0;
+
+            // Loops through and randomize order of question
+            while (i < toShuffle.GetLength(0))
             {
-                
+                int rand = random.Next(0, toShuffle.GetLength(0));
+                if (output[rand, 0] == null)
+                {
+                    for (int i2 = 0; i2 < toShuffle.GetLength(1); i2++)
+                    {
+                        output[rand, i2] = toShuffle[i, i2];
+                    }
+                    i++;
+                }
             }
-                        
+
             return output;
         }
     }
