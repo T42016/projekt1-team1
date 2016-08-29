@@ -36,13 +36,6 @@
             this.btnQuizCreator = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.tabQuiz = new System.Windows.Forms.TabPage();
-            this.btnQuit = new System.Windows.Forms.Button();
-            this.prgBar30s = new System.Windows.Forms.ProgressBar();
-            this.rtbxQuestion = new System.Windows.Forms.RichTextBox();
-            this.btnAnsr4 = new System.Windows.Forms.Button();
-            this.btnAnsr3 = new System.Windows.Forms.Button();
-            this.btnAnsr2 = new System.Windows.Forms.Button();
-            this.btnAnsr1 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lblError6 = new System.Windows.Forms.Label();
             this.lblError5 = new System.Windows.Forms.Label();
@@ -69,10 +62,19 @@
             this.tbxAnswer1 = new System.Windows.Forms.TextBox();
             this.lblQuestion = new System.Windows.Forms.Label();
             this.timer30s = new System.Windows.Forms.Timer(this.components);
+            this.gboxQuiz = new System.Windows.Forms.GroupBox();
+            this.btnQuit = new System.Windows.Forms.Button();
+            this.prgBar30s = new System.Windows.Forms.ProgressBar();
+            this.rtbxQuestion = new System.Windows.Forms.RichTextBox();
+            this.btnAnsr4 = new System.Windows.Forms.Button();
+            this.btnAnsr3 = new System.Windows.Forms.Button();
+            this.btnAnsr2 = new System.Windows.Forms.Button();
+            this.btnAnsr1 = new System.Windows.Forms.Button();
             this.tc.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.tabQuiz.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.gboxQuiz.SuspendLayout();
             this.SuspendLayout();
             // 
             // tc
@@ -142,13 +144,7 @@
             // 
             // tabQuiz
             // 
-            this.tabQuiz.Controls.Add(this.btnQuit);
-            this.tabQuiz.Controls.Add(this.prgBar30s);
-            this.tabQuiz.Controls.Add(this.rtbxQuestion);
-            this.tabQuiz.Controls.Add(this.btnAnsr4);
-            this.tabQuiz.Controls.Add(this.btnAnsr3);
-            this.tabQuiz.Controls.Add(this.btnAnsr2);
-            this.tabQuiz.Controls.Add(this.btnAnsr1);
+            this.tabQuiz.Controls.Add(this.gboxQuiz);
             this.tabQuiz.Location = new System.Drawing.Point(4, 22);
             this.tabQuiz.Margin = new System.Windows.Forms.Padding(2);
             this.tabQuiz.Name = "tabQuiz";
@@ -157,71 +153,6 @@
             this.tabQuiz.TabIndex = 1;
             this.tabQuiz.Text = "Quiz";
             this.tabQuiz.UseVisualStyleBackColor = true;
-            // 
-            // btnQuit
-            // 
-            this.btnQuit.Location = new System.Drawing.Point(7, 344);
-            this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(95, 53);
-            this.btnQuit.TabIndex = 6;
-            this.btnQuit.Text = "Avbryt Quiz";
-            this.btnQuit.UseVisualStyleBackColor = true;
-            // 
-            // prgBar30s
-            // 
-            this.prgBar30s.Location = new System.Drawing.Point(116, 332);
-            this.prgBar30s.Name = "prgBar30s";
-            this.prgBar30s.Size = new System.Drawing.Size(237, 23);
-            this.prgBar30s.TabIndex = 5;
-            // 
-            // rtbxQuestion
-            // 
-            this.rtbxQuestion.Location = new System.Drawing.Point(118, 9);
-            this.rtbxQuestion.Margin = new System.Windows.Forms.Padding(2);
-            this.rtbxQuestion.Name = "rtbxQuestion";
-            this.rtbxQuestion.Size = new System.Drawing.Size(234, 106);
-            this.rtbxQuestion.TabIndex = 4;
-            this.rtbxQuestion.Text = "";
-            // 
-            // btnAnsr4
-            // 
-            this.btnAnsr4.Location = new System.Drawing.Point(242, 217);
-            this.btnAnsr4.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAnsr4.Name = "btnAnsr4";
-            this.btnAnsr4.Size = new System.Drawing.Size(111, 94);
-            this.btnAnsr4.TabIndex = 3;
-            this.btnAnsr4.Text = "4";
-            this.btnAnsr4.UseVisualStyleBackColor = true;
-            // 
-            // btnAnsr3
-            // 
-            this.btnAnsr3.Location = new System.Drawing.Point(116, 217);
-            this.btnAnsr3.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAnsr3.Name = "btnAnsr3";
-            this.btnAnsr3.Size = new System.Drawing.Size(113, 94);
-            this.btnAnsr3.TabIndex = 2;
-            this.btnAnsr3.Text = "3";
-            this.btnAnsr3.UseVisualStyleBackColor = true;
-            // 
-            // btnAnsr2
-            // 
-            this.btnAnsr2.Location = new System.Drawing.Point(242, 119);
-            this.btnAnsr2.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAnsr2.Name = "btnAnsr2";
-            this.btnAnsr2.Size = new System.Drawing.Size(110, 94);
-            this.btnAnsr2.TabIndex = 1;
-            this.btnAnsr2.Text = "2";
-            this.btnAnsr2.UseVisualStyleBackColor = true;
-            // 
-            // btnAnsr1
-            // 
-            this.btnAnsr1.Location = new System.Drawing.Point(116, 119);
-            this.btnAnsr1.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAnsr1.Name = "btnAnsr1";
-            this.btnAnsr1.Size = new System.Drawing.Size(113, 94);
-            this.btnAnsr1.TabIndex = 0;
-            this.btnAnsr1.Text = "1";
-            this.btnAnsr1.UseVisualStyleBackColor = true;
             // 
             // tabPage1
             // 
@@ -488,6 +419,86 @@
             this.timer30s.Interval = 1000;
             this.timer30s.Tick += new System.EventHandler(this.timer30s_Tick);
             // 
+            // gboxQuiz
+            // 
+            this.gboxQuiz.Controls.Add(this.btnQuit);
+            this.gboxQuiz.Controls.Add(this.prgBar30s);
+            this.gboxQuiz.Controls.Add(this.rtbxQuestion);
+            this.gboxQuiz.Controls.Add(this.btnAnsr4);
+            this.gboxQuiz.Controls.Add(this.btnAnsr3);
+            this.gboxQuiz.Controls.Add(this.btnAnsr2);
+            this.gboxQuiz.Controls.Add(this.btnAnsr1);
+            this.gboxQuiz.Location = new System.Drawing.Point(-4, 0);
+            this.gboxQuiz.Name = "gboxQuiz";
+            this.gboxQuiz.Size = new System.Drawing.Size(512, 410);
+            this.gboxQuiz.TabIndex = 7;
+            this.gboxQuiz.TabStop = false;
+            // 
+            // btnQuit
+            // 
+            this.btnQuit.Location = new System.Drawing.Point(15, 337);
+            this.btnQuit.Name = "btnQuit";
+            this.btnQuit.Size = new System.Drawing.Size(95, 53);
+            this.btnQuit.TabIndex = 13;
+            this.btnQuit.Text = "Avbryt Quiz";
+            this.btnQuit.UseVisualStyleBackColor = true;
+            // 
+            // prgBar30s
+            // 
+            this.prgBar30s.Location = new System.Drawing.Point(131, 341);
+            this.prgBar30s.Name = "prgBar30s";
+            this.prgBar30s.Size = new System.Drawing.Size(237, 23);
+            this.prgBar30s.TabIndex = 12;
+            // 
+            // rtbxQuestion
+            // 
+            this.rtbxQuestion.Location = new System.Drawing.Point(133, 18);
+            this.rtbxQuestion.Margin = new System.Windows.Forms.Padding(2);
+            this.rtbxQuestion.Name = "rtbxQuestion";
+            this.rtbxQuestion.Size = new System.Drawing.Size(234, 106);
+            this.rtbxQuestion.TabIndex = 11;
+            this.rtbxQuestion.Text = "";
+            // 
+            // btnAnsr4
+            // 
+            this.btnAnsr4.Location = new System.Drawing.Point(257, 226);
+            this.btnAnsr4.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAnsr4.Name = "btnAnsr4";
+            this.btnAnsr4.Size = new System.Drawing.Size(111, 94);
+            this.btnAnsr4.TabIndex = 10;
+            this.btnAnsr4.Text = "4";
+            this.btnAnsr4.UseVisualStyleBackColor = true;
+            // 
+            // btnAnsr3
+            // 
+            this.btnAnsr3.Location = new System.Drawing.Point(131, 226);
+            this.btnAnsr3.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAnsr3.Name = "btnAnsr3";
+            this.btnAnsr3.Size = new System.Drawing.Size(113, 94);
+            this.btnAnsr3.TabIndex = 9;
+            this.btnAnsr3.Text = "3";
+            this.btnAnsr3.UseVisualStyleBackColor = true;
+            // 
+            // btnAnsr2
+            // 
+            this.btnAnsr2.Location = new System.Drawing.Point(257, 128);
+            this.btnAnsr2.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAnsr2.Name = "btnAnsr2";
+            this.btnAnsr2.Size = new System.Drawing.Size(110, 94);
+            this.btnAnsr2.TabIndex = 8;
+            this.btnAnsr2.Text = "2";
+            this.btnAnsr2.UseVisualStyleBackColor = true;
+            // 
+            // btnAnsr1
+            // 
+            this.btnAnsr1.Location = new System.Drawing.Point(131, 128);
+            this.btnAnsr1.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAnsr1.Name = "btnAnsr1";
+            this.btnAnsr1.Size = new System.Drawing.Size(113, 94);
+            this.btnAnsr1.TabIndex = 7;
+            this.btnAnsr1.Text = "1";
+            this.btnAnsr1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -502,6 +513,7 @@
             this.tabQuiz.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.gboxQuiz.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -512,11 +524,6 @@
         private System.Windows.Forms.TabPage tabMenu;
         private System.Windows.Forms.TabPage tabQuiz;
         private System.Windows.Forms.Button btnStart;
-        private System.Windows.Forms.RichTextBox rtbxQuestion;
-        private System.Windows.Forms.Button btnAnsr4;
-        private System.Windows.Forms.Button btnAnsr3;
-        private System.Windows.Forms.Button btnAnsr2;
-        private System.Windows.Forms.Button btnAnsr1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label lblAnswer4;
         private System.Windows.Forms.TextBox tbxAnswer4;
@@ -530,11 +537,9 @@
         private System.Windows.Forms.RichTextBox rtbnQuestion;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Timer timer30s;
-        private System.Windows.Forms.ProgressBar prgBar30s;
         private System.Windows.Forms.Button btnQuizChoose;
         private System.Windows.Forms.Button btnResults;
         private System.Windows.Forms.Button btnQuizCreator;
-        private System.Windows.Forms.Button btnQuit;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnRemove;
@@ -548,6 +553,14 @@
         private System.Windows.Forms.Label lblError3;
         private System.Windows.Forms.Label lblError2;
         private System.Windows.Forms.Label lblError1;
+        private System.Windows.Forms.GroupBox gboxQuiz;
+        private System.Windows.Forms.Button btnQuit;
+        private System.Windows.Forms.ProgressBar prgBar30s;
+        private System.Windows.Forms.RichTextBox rtbxQuestion;
+        private System.Windows.Forms.Button btnAnsr4;
+        private System.Windows.Forms.Button btnAnsr3;
+        private System.Windows.Forms.Button btnAnsr2;
+        private System.Windows.Forms.Button btnAnsr1;
     }
 }
 

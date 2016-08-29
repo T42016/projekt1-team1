@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Threading;
 
 namespace Quizz_T4
 {
@@ -33,39 +34,17 @@ namespace Quizz_T4
         {
             timer30s.Start();
             tc.SelectedTab = tabQuiz;
+            gboxQuiz.Enabled = false;
+            btnAnsr4.Enabled = false;
+            Thread.Sleep(2000);
+            gboxQuiz.Enabled = true;
+
             string[,] information = new string[10, 5];
             string[,] scrambledInformation = new string[10, 6];
             string[] theAnswers = new string[4];
-
-            for (int a = 0; a < 10; a++)
-            {
-                information[a, 0] = questions[a].ToString();
-
-                theAnswers[1] = answers[a].Answer1;
-                theAnswers[2] = answers[a].Answer2;
-                theAnswers[3] = answers[a].Answer3;
-                theAnswers[4] = answers[a].Answer4;
-
-                for (int b = 1; b < 6; b++)
-                {
-                    information[a, b] = theAnswers[b];
-                }
-
-            }
-
-            //scrambledInformation =  Scramble(information);
-            for (int x = 0; x < 10; x++)
-            {
-                rtbxQuestion.Text = scrambledInformation[x, 0];
-
-                btnAnsr1.Text = scrambledInformation[x, 2];
-                btnAnsr2.Text = scrambledInformation[x, 3];
-                btnAnsr3.Text = scrambledInformation[x, 4];
-                btnAnsr4.Text = scrambledInformation[x, 5];
-
-
-            }
         }
+
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -197,27 +176,32 @@ namespace Quizz_T4
 
         private void rtbnQuestion_TextChanged(object sender, EventArgs e)
         {
-            IsTextValid.isTextvalid(lblError2, tbxQuizzName.Text);
+            IsTextValid.isTextvalid(lblError2, rtbnQuestion.Text);
         }
 
         private void tbxAnswer1_TextChanged(object sender, EventArgs e)
         {
-            IsTextValid.isTextvalid(lblError3, tbxQuizzName.Text);
+            IsTextValid.isTextvalid(lblError3, tbxAnswer1.Text);
         }
 
         private void tbxAnswer2_TextChanged(object sender, EventArgs e)
         {
-            IsTextValid.isTextvalid(lblError4, tbxQuizzName.Text);
+            IsTextValid.isTextvalid(lblError4, tbxAnswer2.Text);
         }
 
         private void tbxAnswer3_TextChanged(object sender, EventArgs e)
         {
-            IsTextValid.isTextvalid(lblError5, tbxQuizzName.Text);
+            IsTextValid.isTextvalid(lblError5, tbxAnswer3.Text);
         }
 
         private void tbxAnswer4_TextChanged(object sender, EventArgs e)
         {
-            IsTextValid.isTextvalid(lblError6, tbxQuizzName.Text);
+            IsTextValid.isTextvalid(lblError6, tbxAnswer4.Text);
+        }
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            tc.SelectedTab = tabMenu;
         }
     }
 }
