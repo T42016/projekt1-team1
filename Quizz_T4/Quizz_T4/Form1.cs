@@ -45,7 +45,6 @@ namespace Quizz_T4
             Save();
 
         }
-
         /// <summary>
         /// Spara funktionen
         /// Här tas informationen som blir inskrivet i formuläret och sparas i 2 filer.
@@ -90,37 +89,10 @@ namespace Quizz_T4
             else if (tbxAnswer1.Text.Contains("|") || tbxAnswer2.Text.Contains("|") || tbxAnswer3.Text.Contains("|") || tbxAnswer4.Text.Contains("|") || rtbnQuestion.Text.Contains("|") || tbxQuizzName.Text.Contains("|"))
             {
                 MessageBox.Show("You cant use the '|' sign");
-                if (tbxAnswer1.Text.Contains("|"))
-                {
-                    tbxAnswer1.Text = "";
-                    lblError3.Visible = true;
-                }
-                else if (tbxAnswer2.Text.Contains("|"))
-                {
-                    tbxAnswer2.Text = "";
-                    lblError4.Visible = true;
-                }
-                else if (tbxAnswer3.Text.Contains("|"))
-                {
-                    tbxAnswer3.Text = "";
-                    lblError5.Visible = true;
-                }
-                else if (tbxAnswer4.Text.Contains("|"))
-                {
-                    tbxAnswer4.Text = "";
-                    lblError6.Visible = true;
-                }
-                else if (tbxQuizzName.Text.Contains("|"))
-                {
-                    tbxQuizzName.Text = "";
-                    lblError1.Visible = true;
-                }
-                else if (rtbnQuestion.Text.Contains("|"))
-                {
-                    rtbnQuestion.Text = "";
-                    lblError2.Visible = true;
-                }
+
             }
+
+            
             else
             {
                 if (iteration > 10)
@@ -187,6 +159,34 @@ namespace Quizz_T4
                 tbxAnswer1.Text = "Correct Answer";
         }
 
+        private void tbxQuizzName_TextChanged(object sender, EventArgs e)
+        {
+            IsTextValid.isTextvalid(lblError1, tbxQuizzName.Text);
+        }
 
+        private void rtbnQuestion_TextChanged(object sender, EventArgs e)
+        {
+            IsTextValid.isTextvalid(lblError2, tbxQuizzName.Text);
+        }
+
+        private void tbxAnswer1_TextChanged(object sender, EventArgs e)
+        {
+            IsTextValid.isTextvalid(lblError3, tbxQuizzName.Text);
+        }
+
+        private void tbxAnswer2_TextChanged(object sender, EventArgs e)
+        {
+            IsTextValid.isTextvalid(lblError4, tbxQuizzName.Text);
+        }
+
+        private void tbxAnswer3_TextChanged(object sender, EventArgs e)
+        {
+            IsTextValid.isTextvalid(lblError5, tbxQuizzName.Text);
+        }
+
+        private void tbxAnswer4_TextChanged(object sender, EventArgs e)
+        {
+            IsTextValid.isTextvalid(lblError6, tbxQuizzName.Text);
+        }
     }
 }
