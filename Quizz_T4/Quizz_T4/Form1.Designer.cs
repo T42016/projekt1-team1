@@ -187,8 +187,9 @@
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(95, 53);
             this.btnQuit.TabIndex = 20;
-            this.btnQuit.Text = "Avbryt Quiz";
+            this.btnQuit.Text = "Abort Mission!";
             this.btnQuit.UseVisualStyleBackColor = true;
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
             // prgBar30s
             // 

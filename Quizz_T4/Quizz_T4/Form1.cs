@@ -263,5 +263,10 @@ namespace Quizz_T4
             Load();
             MessageBox.Show("bananer");
         }
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            tc.SelectedTab = tabMenu;
+        }
     }
 }
