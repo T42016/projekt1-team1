@@ -31,7 +31,7 @@ namespace Quizz_T4
         {
             timer30s.Start();
             tc.SelectedTab = tabQuiz;
-            string[,] information = new string[10, 6];
+            string[,] information = new string[10, 5];
             string[,] scrambledInformation = new string[10, 6];
             string[] theAnswers = new string[4];
 
