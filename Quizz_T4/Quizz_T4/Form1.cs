@@ -35,7 +35,7 @@ namespace Quizz_T4
             tc.SelectedTab = tabQuiz;
             gbxQuiz.Enabled = false;
             Thread.Sleep(500);
-            gboxQuiz.Enabled = true;
+            gbxQuiz.Enabled = true;
 
 
             string[,] scrambledInformation = new string[questions.Count, 6];
@@ -160,9 +160,9 @@ namespace Quizz_T4
             }
 
 
-            string[] questionLines = System.IO.File.ReadAllLines(@"testquestions.txt");
+            string[] questionLines = System.IO.File.ReadAllLines(@"testQuestions.txt");
 
-            foreach (string line in answersLines)
+            foreach (string line in questionLines)
             {
                 string[] words = line.Split('|');
 
@@ -238,10 +238,10 @@ namespace Quizz_T4
             //package questions and answers in a two dimentional string array.
             string[,] information = new string[questions.Count, 5];
             string[] theAnswers = new string[4];
-
+            
             for (int a = 0; a < questions.Count; a++)
             {
-                information[a, 0] = questions[a].ToString();
+                information[a, 0] = questions[a].Question;
 
                 theAnswers[0] = answers[a].Answer1;
                 theAnswers[1] = answers[a].Answer2;
