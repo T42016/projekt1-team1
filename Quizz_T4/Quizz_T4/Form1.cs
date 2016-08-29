@@ -32,27 +32,10 @@ namespace Quizz_T4
         {
             timer30s.Start();
             tc.SelectedTab = tabQuiz;
-            string[,] information = new string[10, 5];
+
             string[,] scrambledInformation = new string[10, 6];
-            string[] theAnswers = new string[4];
 
-            for (int a = 0; a < 10; a++)
-            {
-                information[a, 0] = questions[a].ToString();
-
-                theAnswers[1] = answers[a].Answer1;
-                theAnswers[2] = answers[a].Answer2;
-                theAnswers[3] = answers[a].Answer3;
-                theAnswers[4] = answers[a].Answer4;
-
-                for (int b = 1; b < 6; b++)
-                {
-                    information[a, b] = theAnswers[b];
-                }
-
-            }
-
-            scrambledInformation = Shuffler.Shuffle(information);
+            scrambledInformation = Shuffler.Shuffle(ReadyInformation());
             for (int x = 0; x < 10; x++)
             {
                 rtbxQuestion.Text = scrambledInformation[x, 0];
@@ -217,5 +200,30 @@ namespace Quizz_T4
         {
             IsTextValid.isTextvalid(lblError6, tbxQuizzName.Text);
         }
+
+        private string[,] ReadyInformation()
+        {
+            //package questions and answers in a two dimentional string array.
+            string[,] information = new string[10, 5];
+            string[] theAnswers = new string[4];
+
+            for (int a = 0; a < 10; a++)
+            {
+                information[a, 0] = questions[a].ToString();
+
+                theAnswers[1] = answers[a].Answer1;
+                theAnswers[2] = answers[a].Answer2;
+                theAnswers[3] = answers[a].Answer3;
+                theAnswers[4] = answers[a].Answer4;
+
+                for (int b = 1; b < 6; b++)
+                {
+                    information[a, b] = theAnswers[b];
+                }
+
+            }
+
+            return information;
+        }  
     }
 }
