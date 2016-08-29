@@ -39,7 +39,7 @@ namespace Quizz_T4
 
             for (int a = 0; a < 10; a++)
             {
-                information[a,0] = questions[a].ToString();
+                information[a, 0] = questions[a].ToString();
 
                 theAnswers[1] = answers[a].Answer1;
                 theAnswers[2] = answers[a].Answer2;
@@ -54,6 +54,17 @@ namespace Quizz_T4
             }
 
             //scrambledInformation =  Scramble(information);
+            for (int x = 0; x < 10; x++)
+            {
+                rtbxQuestion.Text = scrambledInformation[x, 0];
+
+                btnAnsr1.Text = scrambledInformation[x, 2];
+                btnAnsr2.Text = scrambledInformation[x, 3];
+                btnAnsr3.Text = scrambledInformation[x, 4];
+                btnAnsr4.Text = scrambledInformation[x, 5];
+
+
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
