@@ -63,7 +63,6 @@ namespace Quizz_T4
                 btnAnsr3.Text = scrambledInformation[x, 4];
                 btnAnsr4.Text = scrambledInformation[x, 5];
 
-
             }
         }
 
