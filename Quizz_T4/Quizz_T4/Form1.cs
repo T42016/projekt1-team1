@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Threading;
 
 namespace Quizz_T4
 {
@@ -32,6 +33,10 @@ namespace Quizz_T4
         {
             timer30s.Start();
             tc.SelectedTab = tabQuiz;
+            gbxQuiz.Enabled = false;
+            Thread.Sleep(500);
+            gboxQuiz.Enabled = true;
+
 
             string[,] scrambledInformation = new string[10, 6];
 
