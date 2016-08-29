@@ -20,13 +20,15 @@ namespace Quizz_T4
         List<Query> questions = new List<Query>();
         List<Answers> answers = new List<Answers>();
 
+
+
         public Form1()
         {
             InitializeComponent();
- 
+
         }
-        
-        
+
+
         private void btnStart_Click(object sender, EventArgs e)
         {
             timer30s.Start();
@@ -63,38 +65,89 @@ namespace Quizz_T4
             Save();
 
         }
-
+        /// <summary>
+        /// Spara funktionen
+        /// Här tas informationen som blir inskrivet i formuläret och sparas i 2 filer.
+        /// "name_question.quizz" och "name_answer.quizz"
+        /// </summary>
         private void Save()
         {
-            string questionfile = tbxQuizzName.Text + "_question" + ".quizz";
 
-            if (iteration > 3)
+
+            string questionfile = tbxQuizzName.Text + "_question" + ".quizz";
+            string answerfile = tbxQuizzName.Text + "_answer" + ".quizz";
+
+            if (tbxAnswer1.Text == "" || tbxAnswer2.Text == "" || tbxAnswer3.Text == "" || tbxAnswer4.Text == "" || rtbnQuestion.Text == "" || tbxQuizzName.Text == "")
             {
-                iteration++;
-                return;
+                MessageBox.Show("You have to fill in all the fields");
+                if (tbxAnswer1.Text == "")
+                {
+                    lblError3.Visible = true;
+                }
+                else if (tbxAnswer2.Text == "")
+                {
+                    lblError4.Visible = true;
+                }
+                else if (tbxAnswer3.Text == "")
+                {
+                    lblError5.Visible = true;
+                }
+                else if (tbxAnswer4.Text == "")
+                {
+                    lblError6.Visible = true;
+                }
+                else if (tbxQuizzName.Text == "")
+                {
+                    lblError1.Visible = true;
+                }
+                else if (rtbnQuestion.Text == "")
+                {
+                    lblError2.Visible = true;
+                }
             }
-            string questionlist = "";
-            string answerlist = "";
+
+            else if (tbxAnswer1.Text.Contains("|") || tbxAnswer2.Text.Contains("|") || tbxAnswer3.Text.Contains("|") || tbxAnswer4.Text.Contains("|") || rtbnQuestion.Text.Contains("|") || tbxQuizzName.Text.Contains("|"))
+            {
+                MessageBox.Show("You cant use the '|' sign");
+
+            }
+
             
-            
+            else
+            {
+                if (iteration > 10)
+                {
+
+                    MessageBox.Show("finished");
+                    tbxAnswer1.Text = "";
+                    tbxAnswer2.Text = "";
+                    tbxAnswer3.Text = "";
+                    tbxAnswer4.Text = "";
+                    rtbnQuestion.Text = "";
+                    tbxQuizzName.Text = "";
+                    iteration = 0;
+                    return;
+                }
+                string questionlist = "";
+                string answerlist = "";
+                string name = tbxQuizzName.Text;
+
+
                 foreach (Query item in questions)
                 {
-                    questionlist += item.Question + "\r\n"; //Här spara jag den nya boken.
+                    questionlist += item.Question + "\r\n";
                 }
 
                 foreach (Answers item in answers)
                 {
-                    answerlist += item.Answer1 + "|" + item.Answer2 + "|" + item.Answer3 + "|" + item.Answer4 + "\r\n"; //Här spara jag den nya boken.
+                    answerlist += item.Answer1 + "|" + item.Answer2 + "|" + item.Answer3 + "|" + item.Answer4 + "\r\n";
                 }
 
                 File.WriteAllText(questionfile, questionlist);
+                File.WriteAllText(answerfile, answerlist);
                 iteration++;
-                File.WriteAllText(@"answers.txt", answerlist);
-                MessageBox.Show("test");
-
-            
-
-
+                MessageBox.Show("New question has been added to " + name);
+            }
         }
 
         private void timer30s_Tick(object sender, EventArgs e)
@@ -118,11 +171,42 @@ namespace Quizz_T4
 
         private void tbxAnswer1_Leave(object sender, EventArgs e)
         {
-            if (tbxAnswer1.Text != ""){
+            if (tbxAnswer1.Text != "")
+            {
 
             }
             else
-             tbxAnswer1.Text = "Correct Answer";
+                tbxAnswer1.Text = "Correct Answer";
+        }
+
+        private void tbxQuizzName_TextChanged(object sender, EventArgs e)
+        {
+            IsTextValid.isTextvalid(lblError1, tbxQuizzName.Text);
+        }
+
+        private void rtbnQuestion_TextChanged(object sender, EventArgs e)
+        {
+            IsTextValid.isTextvalid(lblError2, tbxQuizzName.Text);
+        }
+
+        private void tbxAnswer1_TextChanged(object sender, EventArgs e)
+        {
+            IsTextValid.isTextvalid(lblError3, tbxQuizzName.Text);
+        }
+
+        private void tbxAnswer2_TextChanged(object sender, EventArgs e)
+        {
+            IsTextValid.isTextvalid(lblError4, tbxQuizzName.Text);
+        }
+
+        private void tbxAnswer3_TextChanged(object sender, EventArgs e)
+        {
+            IsTextValid.isTextvalid(lblError5, tbxQuizzName.Text);
+        }
+
+        private void tbxAnswer4_TextChanged(object sender, EventArgs e)
+        {
+            IsTextValid.isTextvalid(lblError6, tbxQuizzName.Text);
         }
     }
 }
