@@ -25,7 +25,6 @@ namespace Quizz_T4
         public Form1()
         {
             InitializeComponent();
-
         }
 
 
