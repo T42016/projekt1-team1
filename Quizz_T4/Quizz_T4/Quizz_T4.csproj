@@ -79,22 +79,22 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Quizzes\Geography_answer.quiz">
+    <None Include="stockquiz\Geography_answer.quiz">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Quizzes\Geography_question.quiz">
+    <None Include="stockquiz\Geography_question.quiz">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Quizzes\Mathematics_answer.quiz">
+    <None Include="stockquiz\Mathematics_answer.quiz">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Quizzes\Mathematics_question.quiz">
+    <None Include="stockquiz\Mathematics_question.quiz">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Quizzes\Physics_answer.quiz" />
-    <None Include="Quizzes\Physics_question.quiz" />
-    <None Include="Quizzes\Politics_answer.quiz" />
-    <None Include="Quizzes\Politics_question.quiz" />
+    <None Include="stockquiz\Physics_answer.quiz" />
+    <None Include="stockquiz\Physics_question.quiz" />
+    <None Include="stockquiz\Politics_answer.quiz" />
+    <None Include="stockquiz\Politics_question.quiz" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
