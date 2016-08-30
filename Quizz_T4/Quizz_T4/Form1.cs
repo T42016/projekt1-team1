@@ -276,8 +276,9 @@ namespace Quizz_T4
         private void btnQuit_Click(object sender, EventArgs e)
         {
             tc.SelectedTab = tabMenu;
-        }
             prgBar30s.Value = 0;
+        }
+            
 
         private void btnAnsr1_Click(object sender, EventArgs e)
         {
