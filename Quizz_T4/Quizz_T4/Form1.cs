@@ -49,10 +49,6 @@ namespace Quizz_T4
             btnAnsr2.Text = scrambledInformation[questionNr - 1, 3];
             btnAnsr3.Text = scrambledInformation[questionNr - 1, 4];
             btnAnsr4.Text = scrambledInformation[questionNr - 1, 5];
-
-            questionNr++;
-
-
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -150,6 +146,7 @@ namespace Quizz_T4
         }
         private void Load()
         {
+            answers.Clear();
             string[] answersLines = System.IO.File.ReadAllLines(@"testAnswers.txt");
 
             foreach (string line in answersLines)
@@ -161,7 +158,7 @@ namespace Quizz_T4
                 answers.Add(answerLoad);
             }
 
-
+            questions.Clear();
             string[] questionLines = System.IO.File.ReadAllLines(@"testQuestions.txt");
 
             foreach (string line in questionLines)
@@ -241,7 +238,7 @@ namespace Quizz_T4
             string[,] information = new string[questions.Count, 5];
             string[] theAnswers = new string[4];
             
-            for (int a = 0; a < questions.Count; a++)
+            for (int a = 0; a < 10; a++)
             {
                 information[a, 0] = questions[a].Question;
 
@@ -263,7 +260,7 @@ namespace Quizz_T4
         private void btnChooseQuiz_Click(object sender, EventArgs e)
         {
             Load();
-            MessageBox.Show("Quizz loaded");
+            MessageBox.Show("Quiz loaded");
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
@@ -278,7 +275,7 @@ namespace Quizz_T4
                 rightAnswers++;
                 questionNr++;
 
-                if (questionNr < 10)
+                if (questionNr < 11)
                 {
                     rtbxQuestion.Text = scrambledInformation[questionNr - 1, 0];
 
@@ -290,6 +287,7 @@ namespace Quizz_T4
                 else
                 {
                     tc.SelectedTab = tabMenu;
+                    MessageBox.Show(rightAnswers + " / 10");
                 }
                 
             }
@@ -297,7 +295,7 @@ namespace Quizz_T4
             {
                 questionNr++;
 
-                if (questionNr < 10)
+                if (questionNr < 11)
                 {
                     rtbxQuestion.Text = scrambledInformation[questionNr - 1, 0];
 
@@ -309,6 +307,7 @@ namespace Quizz_T4
                 else
                 {
                     tc.SelectedTab = tabMenu;
+                    MessageBox.Show(rightAnswers + " / 10");
                 }
             }
 
@@ -317,17 +316,140 @@ namespace Quizz_T4
 
         private void btnAnsr2_Click(object sender, EventArgs e)
         {
-            
+            if (btnAnsr2.Text == scrambledInformation[questionNr - 1, 1].ToString())
+            {
+                rightAnswers++;
+                questionNr++;
+
+                if (questionNr < 11)
+                {
+                    rtbxQuestion.Text = scrambledInformation[questionNr - 1, 0];
+
+                    btnAnsr1.Text = scrambledInformation[questionNr - 1, 2];
+                    btnAnsr2.Text = scrambledInformation[questionNr - 1, 3];
+                    btnAnsr3.Text = scrambledInformation[questionNr - 1, 4];
+                    btnAnsr4.Text = scrambledInformation[questionNr - 1, 5];
+                }
+                else
+                {
+                    tc.SelectedTab = tabMenu;
+                    MessageBox.Show(rightAnswers + " / 10");
+                }
+
+            }
+            else
+            {
+                questionNr++;
+
+                if (questionNr < 11)
+                {
+                    rtbxQuestion.Text = scrambledInformation[questionNr - 1, 0];
+
+                    btnAnsr1.Text = scrambledInformation[questionNr - 1, 2];
+                    btnAnsr2.Text = scrambledInformation[questionNr - 1, 3];
+                    btnAnsr3.Text = scrambledInformation[questionNr - 1, 4];
+                    btnAnsr4.Text = scrambledInformation[questionNr - 1, 5];
+                }
+                else
+                {
+                    tc.SelectedTab = tabMenu;
+                    MessageBox.Show(rightAnswers + " / 10");
+                }
+            }
+
+            lblScore.Text = rightAnswers + " / 10";
         }
 
         private void btnAnsr3_Click(object sender, EventArgs e)
         {
-            
+            if (btnAnsr3.Text == scrambledInformation[questionNr - 1, 1].ToString())
+            {
+                rightAnswers++;
+                questionNr++;
+
+                if (questionNr < 11)
+                {
+                    rtbxQuestion.Text = scrambledInformation[questionNr - 1, 0];
+
+                    btnAnsr1.Text = scrambledInformation[questionNr - 1, 2];
+                    btnAnsr2.Text = scrambledInformation[questionNr - 1, 3];
+                    btnAnsr3.Text = scrambledInformation[questionNr - 1, 4];
+                    btnAnsr4.Text = scrambledInformation[questionNr - 1, 5];
+                }
+                else
+                {
+                    tc.SelectedTab = tabMenu;
+                    MessageBox.Show(rightAnswers + " / 10");
+                }
+
+            }
+            else
+            {
+                questionNr++;
+
+                if (questionNr < 11)
+                {
+                    rtbxQuestion.Text = scrambledInformation[questionNr - 1, 0];
+
+                    btnAnsr1.Text = scrambledInformation[questionNr - 1, 2];
+                    btnAnsr2.Text = scrambledInformation[questionNr - 1, 3];
+                    btnAnsr3.Text = scrambledInformation[questionNr - 1, 4];
+                    btnAnsr4.Text = scrambledInformation[questionNr - 1, 5];
+                }
+                else
+                {
+                    tc.SelectedTab = tabMenu;
+                    MessageBox.Show(rightAnswers + " / 10");
+                }
+            }
+
+            lblScore.Text = rightAnswers + " / 10";
         }
 
         private void btnAnsr4_Click(object sender, EventArgs e)
         {
-            
+            if (btnAnsr4.Text == scrambledInformation[questionNr - 1, 1].ToString())
+            {
+                rightAnswers++;
+                questionNr++;
+
+                if (questionNr < 11)
+                {
+                    rtbxQuestion.Text = scrambledInformation[questionNr - 1, 0];
+
+                    btnAnsr1.Text = scrambledInformation[questionNr - 1, 2];
+                    btnAnsr2.Text = scrambledInformation[questionNr - 1, 3];
+                    btnAnsr3.Text = scrambledInformation[questionNr - 1, 4];
+                    btnAnsr4.Text = scrambledInformation[questionNr - 1, 5];
+                }
+                else
+                {
+                    tc.SelectedTab = tabMenu;
+                    MessageBox.Show(rightAnswers + " / 10");
+                }
+
+            }
+            else
+            {
+                questionNr++;
+
+                if (questionNr < 11)
+                {
+                    rtbxQuestion.Text = scrambledInformation[questionNr - 1, 0];
+
+                    btnAnsr1.Text = scrambledInformation[questionNr - 1, 2];
+                    btnAnsr2.Text = scrambledInformation[questionNr - 1, 3];
+                    btnAnsr3.Text = scrambledInformation[questionNr - 1, 4];
+                    btnAnsr4.Text = scrambledInformation[questionNr - 1, 5];
+                }
+                else
+                {
+                    tc.SelectedTab = tabMenu;
+                    MessageBox.Show(rightAnswers + " / 10");
+                }
+            }
+
+            lblScore.Text = rightAnswers + " / 10";
         }
     }
 }
