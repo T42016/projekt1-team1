@@ -32,11 +32,11 @@ namespace Quizz_T4
         private void btnStart_Click(object sender, EventArgs e)
         {
             timer30s.Start();
-            prgBar30s.Value = 0;
             tc.SelectedTab = tabQuiz;
             gbxQuiz.Enabled = false;
             Thread.Sleep(500);
             gbxQuiz.Enabled = true;
+            prgBar30s.Value = 0;
 
 
             string[,] scrambledInformation = new string[questions.Count, 6];
@@ -149,7 +149,16 @@ namespace Quizz_T4
         }
         private void Load()
         {
-            string[] answersLines = System.IO.File.ReadAllLines(@"testAnswers.txt");
+            /*
+            DirectoryInfo di = new DirectoryInfo("C:\\");
+            var fileInfo = di.GetFiles("*.quizz", SearchOption.AllDirectories);
+            foreach (var file in fileInfo)
+            {
+                File.ReadAllLines(@"");
+            }
+            */
+
+            string[] answersLines = System.IO.File.ReadAllLines(@"stockquiz\testAnswers.txt");
 
             foreach (string line in answersLines)
             {
@@ -161,7 +170,7 @@ namespace Quizz_T4
             }
 
 
-            string[] questionLines = System.IO.File.ReadAllLines(@"testQuestions.txt");
+            string[] questionLines = System.IO.File.ReadAllLines(@"stockquiz\testQuestions.txt");
 
             foreach (string line in questionLines)
             {
@@ -186,7 +195,6 @@ namespace Quizz_T4
             {
                 timer30s.Stop();
                 MessageBox.Show("Time's Up");
-                prgBar30s.Value = 0;
             }
         }
 
@@ -269,6 +277,7 @@ namespace Quizz_T4
         private void btnQuit_Click(object sender, EventArgs e)
         {
             tc.SelectedTab = tabMenu;
+            prgBar30s.Value = 0;
         }
     }
 }
