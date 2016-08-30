@@ -15,7 +15,7 @@ namespace Quizz_T4
     public partial class Form1 : Form
     {
         static int iteration = 1;
-
+        private int rightAnswers = 0;
 
 
         List<Query> questions = new List<Query>();
@@ -263,7 +263,7 @@ namespace Quizz_T4
         private void btnChooseQuiz_Click(object sender, EventArgs e)
         {
             Load();
-            MessageBox.Show("bananer");
+            MessageBox.Show("Quizz loaded");
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
