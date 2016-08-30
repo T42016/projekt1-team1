@@ -23,6 +23,9 @@ namespace Quizz_T4
         List<Answers> answers = new List<Answers>();
         string[,] scrambledInformation = new string[10, 6];
 
+        string[] prevScore = System.IO.File.ReadAllLines(@"previousScore\score.txt");
+        
+
 
         public Form1()
         {
@@ -32,24 +35,32 @@ namespace Quizz_T4
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            timer10s.Start();
-            tc.SelectedTab = tabQuiz;
-            gbxQuiz.Enabled = false;
-            Thread.Sleep(500);
-            gbxQuiz.Enabled = true;
-            rightAnswers = 0;
-            prgBar10s.Value = 0;
-            questionNr = 1;
-            lblScore.Text = rightAnswers + " / 10";
+            if (questions.Count == 0 || answers.Count == 0)
+            {
+                MessageBox.Show("You have to load a quiz first!");
+            }
+            else
+            {
+                timer10s.Start();
+                tc.SelectedTab = tabQuiz;
+                gbxQuiz.Enabled = false;
+                Thread.Sleep(500);
+                gbxQuiz.Enabled = true;
+                rightAnswers = 0;
+                prgBar10s.Value = 0;
+                questionNr = 1;
+                lblScore.Text = rightAnswers + " / 10";
 
-            scrambledInformation = Shuffler.Shuffle(ReadyInformation());
-            
-            rtbxQuestion.Text = scrambledInformation[questionNr - 1, 0];
+                scrambledInformation = Shuffler.Shuffle(ReadyInformation());
 
-            btnAnsr1.Text = scrambledInformation[questionNr - 1, 2];
-            btnAnsr2.Text = scrambledInformation[questionNr - 1, 3];
-            btnAnsr3.Text = scrambledInformation[questionNr - 1, 4];
-            btnAnsr4.Text = scrambledInformation[questionNr - 1, 5];
+                rtbxQuestion.Text = scrambledInformation[questionNr - 1, 0];
+
+                btnAnsr1.Text = scrambledInformation[questionNr - 1, 2];
+                btnAnsr2.Text = scrambledInformation[questionNr - 1, 3];
+                btnAnsr3.Text = scrambledInformation[questionNr - 1, 4];
+                btnAnsr4.Text = scrambledInformation[questionNr - 1, 5];
+            }
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -211,6 +222,12 @@ namespace Quizz_T4
                 {
                     tc.SelectedTab = tabMenu;
                     MessageBox.Show(rightAnswers + " / 10");
+                    rtbxQuestion.Text = "";
+
+                    btnAnsr1.Text = "";
+                    btnAnsr2.Text = "";
+                    btnAnsr3.Text = "";
+                    btnAnsr4.Text = "";
                 }
                 
             }
@@ -527,10 +544,22 @@ namespace Quizz_T4
                     prgBar10s.Value = 0;
                     tc.SelectedTab = tabMenu;
                     MessageBox.Show(rightAnswers + " / 10");
+                    string prev = rightAnswers.ToString();
+                    File.WriteAllText(@"previousScore\score.txt", prev);
                 }
             }
 
             lblScore.Text = rightAnswers + " / 10";
         }
+
+        private void btnQuizCreator_Click(object sender, EventArgs e)
+        {
+            tc.SelectedTab = tabCreator;
+        }
+
+        private void btnResults_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(prevScore[0]);
+    }
     }
 }
