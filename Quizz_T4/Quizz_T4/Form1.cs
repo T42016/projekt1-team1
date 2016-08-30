@@ -32,6 +32,7 @@ namespace Quizz_T4
         private void btnStart_Click(object sender, EventArgs e)
         {
             timer30s.Start();
+            prgBar30s.Value = 0;
             tc.SelectedTab = tabQuiz;
             gbxQuiz.Enabled = false;
             Thread.Sleep(500);
@@ -185,6 +186,7 @@ namespace Quizz_T4
             {
                 timer30s.Stop();
                 MessageBox.Show("Time's Up");
+                prgBar30s.Value = 0;
             }
         }
 
