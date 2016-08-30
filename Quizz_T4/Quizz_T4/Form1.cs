@@ -15,7 +15,7 @@ namespace Quizz_T4
     public partial class Form1 : Form
     {
         static int iteration = 1;
-        private int rightAnswers;
+        private int rightAnswers = 0;
 
 
         List<Query> questions = new List<Query>();
