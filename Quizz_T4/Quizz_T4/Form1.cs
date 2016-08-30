@@ -71,8 +71,8 @@ namespace Quizz_T4
         {
 
 
-            string questionfile = tbxQuizzName.Text + "_question" + ".quizz";
-            string answerfile = tbxQuizzName.Text + "_answer" + ".quizz";
+            string questionfile = tbxQuizzName.Text + "_question" + ".quiz";
+            string answerfile = tbxQuizzName.Text + "_answer" + ".quiz";
 
             if (tbxAnswer1.Text == "" || tbxAnswer2.Text == "" || tbxAnswer3.Text == "" || tbxAnswer4.Text == "" || rtbnQuestion.Text == "" || tbxQuizzName.Text == "")
             {
