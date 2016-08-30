@@ -91,6 +91,10 @@
     <None Include="Quizzes\Mathematics_question.quiz">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Quizzes\Physics_answer.quiz" />
+    <None Include="Quizzes\Physics_question.quiz" />
+    <None Include="Quizzes\Politics_answer.quiz" />
+    <None Include="Quizzes\Politics_question.quiz" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
