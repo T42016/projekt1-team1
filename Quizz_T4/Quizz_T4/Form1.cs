@@ -38,6 +38,7 @@ namespace Quizz_T4
             Thread.Sleep(500);
             gbxQuiz.Enabled = true;
             rightAnswers = 0;
+            prgBar30s.Value = 0;
             questionNr = 1;
             lblScore.Text = rightAnswers + " / 10";
 
@@ -147,7 +148,16 @@ namespace Quizz_T4
         private void Load()
         {
             answers.Clear();
-            string[] answersLines = System.IO.File.ReadAllLines(@"testAnswers.txt");
+            /*
+            DirectoryInfo di = new DirectoryInfo("C:\\");
+            var fileInfo = di.GetFiles("*.quizz", SearchOption.AllDirectories);
+            foreach (var file in fileInfo)
+            {
+                File.ReadAllLines(@"");
+            }
+            */
+
+            string[] answersLines = System.IO.File.ReadAllLines(@"stockquiz\testAnswers.txt");
 
             foreach (string line in answersLines)
             {
@@ -159,7 +169,7 @@ namespace Quizz_T4
             }
 
             questions.Clear();
-            string[] questionLines = System.IO.File.ReadAllLines(@"testQuestions.txt");
+            string[] questionLines = System.IO.File.ReadAllLines(@"stockquiz\testQuestions.txt");
 
             foreach (string line in questionLines)
             {
@@ -267,6 +277,7 @@ namespace Quizz_T4
         {
             tc.SelectedTab = tabMenu;
         }
+            prgBar30s.Value = 0;
 
         private void btnAnsr1_Click(object sender, EventArgs e)
         {
