@@ -267,7 +267,7 @@ namespace Quizz_T4
             string[,] information = new string[questions.Count, 5];
             string[] theAnswers = new string[4];
             
-            for (int a = 0; a < 10; a++)
+            for (int a = 0; a < 10; a++) 
             {
                 information[a, 0] = questions[a].Question;
 
@@ -309,6 +309,9 @@ namespace Quizz_T4
                 rightAnswers++;
                 questionNr++;
 
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"../../Sound/GameRight.wav");
+                player.Play();
+
                 if (questionNr < 11)
                 {
                     rtbxQuestion.Text = scrambledInformation[questionNr - 1, 0];
@@ -331,6 +334,9 @@ namespace Quizz_T4
             else
             {
                 questionNr++;
+
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"../../Sound/GameFailure.wav");
+                player.Play();
 
                 if (questionNr < 11)
                 {
@@ -362,6 +368,9 @@ namespace Quizz_T4
                 rightAnswers++;
                 questionNr++;
 
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"../../Sound/GameRight.wav");
+                player.Play();
+
                 if (questionNr < 11)
                 {
                     rtbxQuestion.Text = scrambledInformation[questionNr - 1, 0];
@@ -383,6 +392,9 @@ namespace Quizz_T4
             else
             {
                 questionNr++;
+
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"../../Sound/GameFailure.wav");
+                player.Play();
 
                 if (questionNr < 11)
                 {
@@ -414,6 +426,9 @@ namespace Quizz_T4
                 rightAnswers++;
                 questionNr++;
 
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"../../Sound/GameRight.wav");
+                player.Play();
+
                 if (questionNr < 11)
                 {
                     rtbxQuestion.Text = scrambledInformation[questionNr - 1, 0];
@@ -435,6 +450,9 @@ namespace Quizz_T4
             else
             {
                 questionNr++;
+
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"../../Sound/GameFailure.wav");
+                player.Play();
 
                 if (questionNr < 11)
                 {
@@ -466,6 +484,9 @@ namespace Quizz_T4
                 rightAnswers++;
                 questionNr++;
 
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"../../Sound/GameRight.wav");
+                player.Play();
+
                 if (questionNr < 11)
                 {
                     rtbxQuestion.Text = scrambledInformation[questionNr - 1, 0];
@@ -487,6 +508,9 @@ namespace Quizz_T4
             else
             {
                 questionNr++;
+
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"../../Sound/GameFailure.wav");
+                player.Play();
 
                 if (questionNr < 11)
                 {
