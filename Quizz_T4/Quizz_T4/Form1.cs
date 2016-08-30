@@ -114,7 +114,7 @@ namespace Quizz_T4
             {
                 if (iteration > 10)
                 {
-
+                    
                     MessageBox.Show("finished");
                     tbxAnswer1.Text = "";
                     tbxAnswer2.Text = "";
