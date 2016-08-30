@@ -193,8 +193,9 @@
             // 
             // prgBar30s
             // 
-            this.prgBar30s.Location = new System.Drawing.Point(138, 341);
+            this.prgBar30s.Location = new System.Drawing.Point(137, 337);
             this.prgBar30s.Name = "prgBar30s";
+            this.prgBar30s.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.prgBar30s.Size = new System.Drawing.Size(237, 23);
             this.prgBar30s.TabIndex = 19;
             // 
