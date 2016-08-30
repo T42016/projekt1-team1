@@ -261,7 +261,7 @@ namespace Quizz_T4
         private void btnChooseQuiz_Click(object sender, EventArgs e)
         {
             Load();
-            MessageBox.Show("bananer");
+            MessageBox.Show("Quizz loaded");
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
