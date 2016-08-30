@@ -79,10 +79,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Quizzes\Mathematics_answer.quizz">
+    <None Include="Quizzes\Mathematics_answer.quiz">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Quizzes\Mathematics_question.quizz">
+    <None Include="Quizzes\Mathematics_question.quiz">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
