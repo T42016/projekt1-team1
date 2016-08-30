@@ -266,13 +266,14 @@
             // 
             // btnAnsr1
             // 
+            this.btnAnsr1.BackColor = System.Drawing.Color.Transparent;
             this.btnAnsr1.Location = new System.Drawing.Point(138, 128);
             this.btnAnsr1.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnsr1.Name = "btnAnsr1";
             this.btnAnsr1.Size = new System.Drawing.Size(113, 94);
             this.btnAnsr1.TabIndex = 14;
             this.btnAnsr1.Text = "1";
-            this.btnAnsr1.UseVisualStyleBackColor = true;
+            this.btnAnsr1.UseVisualStyleBackColor = false;
             this.btnAnsr1.Click += new System.EventHandler(this.btnAnsr1_Click);
             // 
             // tabPage1

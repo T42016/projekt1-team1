@@ -321,6 +321,8 @@ namespace Quizz_T4
                 
                 else 
                 {
+                    timer10s.Stop();
+                    prgBar10s.Value = 0;
                     tc.SelectedTab = tabMenu;
                     MessageBox.Show(rightAnswers + " / 10");
                 }
@@ -341,6 +343,8 @@ namespace Quizz_T4
                 }
                 else
                 {
+                    timer10s.Stop();
+                    prgBar10s.Value = 0;
                     tc.SelectedTab = tabMenu;
                     MessageBox.Show(rightAnswers + " / 10");
                 }
@@ -369,6 +373,8 @@ namespace Quizz_T4
                 }
                 else
                 {
+                    timer10s.Stop();
+                    prgBar10s.Value = 0;
                     tc.SelectedTab = tabMenu;
                     MessageBox.Show(rightAnswers + " / 10");
                 }
@@ -389,6 +395,8 @@ namespace Quizz_T4
                 }
                 else
                 {
+                    timer10s.Stop();
+                    prgBar10s.Value = 0;
                     tc.SelectedTab = tabMenu;
                     MessageBox.Show(rightAnswers + " / 10");
                 }
@@ -417,6 +425,8 @@ namespace Quizz_T4
                 }
                 else
                 {
+                    timer10s.Stop();
+                    prgBar10s.Value = 0;
                     tc.SelectedTab = tabMenu;
                     MessageBox.Show(rightAnswers + " / 10");
                 }
@@ -437,6 +447,8 @@ namespace Quizz_T4
                 }
                 else
                 {
+                    timer10s.Stop();
+                    prgBar10s.Value = 0;
                     tc.SelectedTab = tabMenu;
                     MessageBox.Show(rightAnswers + " / 10");
                 }
@@ -465,6 +477,8 @@ namespace Quizz_T4
                 }
                 else
                 {
+                    timer10s.Stop();
+                    prgBar10s.Value = 0;
                     tc.SelectedTab = tabMenu;
                     MessageBox.Show(rightAnswers + " / 10");
                 }
@@ -485,6 +499,8 @@ namespace Quizz_T4
                 }
                 else
                 {
+                    timer10s.Stop();
+                    prgBar10s.Value = 0;
                     tc.SelectedTab = tabMenu;
                     MessageBox.Show(rightAnswers + " / 10");
                 }
