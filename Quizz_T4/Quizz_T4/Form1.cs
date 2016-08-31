@@ -294,7 +294,7 @@ namespace Quizz_T4
             string[,] information = new string[questions.Count, 5];
             string[] theAnswers = new string[4];
             
-            for (int a = 0; a < 10; a++) 
+            for (int a = 0; a < information.GetLength(0); a++) 
             {
                 information[a, 0] = questions[a].Question;
 
