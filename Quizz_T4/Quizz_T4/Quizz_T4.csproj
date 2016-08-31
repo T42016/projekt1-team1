@@ -91,10 +91,18 @@
     <None Include="stockquiz\Mathematics_question.quiz">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="stockquiz\Physics_answer.quiz" />
-    <None Include="stockquiz\Physics_question.quiz" />
-    <None Include="stockquiz\Politics_answer.quiz" />
-    <None Include="stockquiz\Politics_question.quiz" />
+    <None Include="stockquiz\Physics_answer.quiz">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="stockquiz\Physics_question.quiz">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="stockquiz\Politics_answer.quiz">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="stockquiz\Politics_question.quiz">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
