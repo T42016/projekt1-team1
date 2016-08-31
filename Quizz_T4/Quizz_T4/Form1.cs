@@ -138,22 +138,32 @@ namespace Quizz_T4
                 string questionlist = "";
                 string answerlist = "";
                 string name = tbxQuizzName.Text;
+                string curFile = @"stockquiz\" + name + "_question" + ".quiz";
 
 
-                foreach (Query item in questions)
+                if (File.Exists(curFile))
                 {
-                    questionlist += item.Question + "\r\n";
+                    MessageBox.Show("A quiz with the same name already exists");
+                    tbxQuizzName.Text = "";
+                }
+                else
+                {
+                    foreach (Query item in questions)
+                    {
+                        questionlist += item.Question + "\r\n";
+                    }
+
+                    foreach (Answers item in answers)
+                    {
+                        answerlist += item.Answer1 + "|" + item.Answer2 + "|" + item.Answer3 + "|" + item.Answer4 + "\r\n";
+                    }
+
+                    File.WriteAllText(questionfile, questionlist);
+                    File.WriteAllText(answerfile, answerlist);
+                    iteration++;
+                    MessageBox.Show("New question has been added to " + name);
                 }
 
-                foreach (Answers item in answers)
-                {
-                    answerlist += item.Answer1 + "|" + item.Answer2 + "|" + item.Answer3 + "|" + item.Answer4 + "\r\n";
-                }
-
-                File.WriteAllText(questionfile, questionlist);
-                File.WriteAllText(answerfile, answerlist);
-                iteration++;
-                MessageBox.Show("New question has been added to " + name);
             }
         }
         private void Load()
