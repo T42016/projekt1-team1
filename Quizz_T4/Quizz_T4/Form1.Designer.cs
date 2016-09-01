@@ -67,7 +67,7 @@
             this.tbxAnswer1 = new System.Windows.Forms.TextBox();
             this.lblQuestion = new System.Windows.Forms.Label();
             this.timer10s = new System.Windows.Forms.Timer(this.components);
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tc.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.tabQuiz.SuspendLayout();
@@ -491,6 +491,12 @@
             this.timer10s.Interval = 10;
             this.timer10s.Tick += new System.EventHandler(this.timer10s_Tick);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.InitialDirectory = "Quizzes";
+            this.openFileDialog1.RestoreDirectory = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -551,6 +557,7 @@
         private System.Windows.Forms.Button btnAnsr3;
         private System.Windows.Forms.Button btnAnsr2;
         private System.Windows.Forms.Button btnAnsr1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
