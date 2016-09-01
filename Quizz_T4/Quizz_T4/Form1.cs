@@ -154,7 +154,7 @@ namespace Quizz_T4
                     }
 
 
-                    if (iteration > 10)
+                    if (iteration >= 10)
                     {
 
                         File.WriteAllText(questionfile, questionlist);
