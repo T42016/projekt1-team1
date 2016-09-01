@@ -384,9 +384,9 @@
             this.lblName.AutoSize = true;
             this.lblName.Location = new System.Drawing.Point(7, 20);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(67, 13);
+            this.lblName.Size = new System.Drawing.Size(60, 13);
             this.lblName.TabIndex = 19;
-            this.lblName.Text = "Quizz Name:";
+            this.lblName.Text = "Quiz name:";
             // 
             // tbxQuizzName
             // 
@@ -520,6 +520,7 @@
             // 
             // tbxAnswer1
             // 
+            this.tbxAnswer1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tbxAnswer1.Location = new System.Drawing.Point(80, 207);
             this.tbxAnswer1.Name = "tbxAnswer1";
             this.tbxAnswer1.Size = new System.Drawing.Size(100, 20);

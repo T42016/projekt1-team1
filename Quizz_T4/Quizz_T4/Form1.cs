@@ -192,6 +192,8 @@ namespace Quizz_T4
 
         private void timer10s_Tick(object sender, EventArgs e)
         {
+
+
             prgBar10s.Maximum = 1000;
             if (prgBar10s.Value < 1000)
             {
@@ -200,6 +202,9 @@ namespace Quizz_T4
             else
             {
                 timer10s.Stop();
+                prgBar10s.Value = 1000;
+                prgBar10s.Value = 999;
+                prgBar10s.Value = 1000;
                 MessageBox.Show("Time's Up! Next question!");
                 questionNr++;
 
@@ -232,6 +237,7 @@ namespace Quizz_T4
         private void tbxAnswer1_Click(object sender, EventArgs e)
         {
             tbxAnswer1.Text = "";
+            tbxAnswer1.ForeColor = Color.Black;
         }
 
         private void tbxAnswer1_Leave(object sender, EventArgs e)
@@ -241,7 +247,11 @@ namespace Quizz_T4
 
             }
             else
+            {
+                tbxAnswer1.ForeColor = Color.DarkGray;
                 tbxAnswer1.Text = "Correct Answer";
+            }
+               
         }
 
         private void tbxQuizzName_TextChanged(object sender, EventArgs e)
