@@ -69,6 +69,7 @@
             this.lblQuestion = new System.Windows.Forms.Label();
             this.timer10s = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.tc.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.tabQuiz.SuspendLayout();
@@ -277,6 +278,7 @@
             // 
             // tabCreator
             // 
+            this.tabCreator.Controls.Add(this.button1);
             this.tabCreator.Controls.Add(this.lblError6);
             this.tabCreator.Controls.Add(this.lblError5);
             this.tabCreator.Controls.Add(this.lblError4);
@@ -309,7 +311,7 @@
             // 
             this.lblError6.AutoSize = true;
             this.lblError6.ForeColor = System.Drawing.Color.Red;
-            this.lblError6.Location = new System.Drawing.Point(186, 285);
+            this.lblError6.Location = new System.Drawing.Point(305, 285);
             this.lblError6.Name = "lblError6";
             this.lblError6.Size = new System.Drawing.Size(11, 13);
             this.lblError6.TabIndex = 25;
@@ -320,7 +322,7 @@
             // 
             this.lblError5.AutoSize = true;
             this.lblError5.ForeColor = System.Drawing.Color.Red;
-            this.lblError5.Location = new System.Drawing.Point(186, 259);
+            this.lblError5.Location = new System.Drawing.Point(305, 259);
             this.lblError5.Name = "lblError5";
             this.lblError5.Size = new System.Drawing.Size(11, 13);
             this.lblError5.TabIndex = 24;
@@ -331,7 +333,7 @@
             // 
             this.lblError4.AutoSize = true;
             this.lblError4.ForeColor = System.Drawing.Color.Red;
-            this.lblError4.Location = new System.Drawing.Point(186, 233);
+            this.lblError4.Location = new System.Drawing.Point(305, 233);
             this.lblError4.Name = "lblError4";
             this.lblError4.Size = new System.Drawing.Size(11, 13);
             this.lblError4.TabIndex = 23;
@@ -342,7 +344,7 @@
             // 
             this.lblError3.AutoSize = true;
             this.lblError3.ForeColor = System.Drawing.Color.Red;
-            this.lblError3.Location = new System.Drawing.Point(186, 207);
+            this.lblError3.Location = new System.Drawing.Point(305, 207);
             this.lblError3.Name = "lblError3";
             this.lblError3.Size = new System.Drawing.Size(11, 13);
             this.lblError3.TabIndex = 22;
@@ -353,7 +355,7 @@
             // 
             this.lblError2.AutoSize = true;
             this.lblError2.ForeColor = System.Drawing.Color.Red;
-            this.lblError2.Location = new System.Drawing.Point(186, 75);
+            this.lblError2.Location = new System.Drawing.Point(305, 75);
             this.lblError2.Name = "lblError2";
             this.lblError2.Size = new System.Drawing.Size(11, 13);
             this.lblError2.TabIndex = 21;
@@ -364,7 +366,7 @@
             // 
             this.lblError1.AutoSize = true;
             this.lblError1.ForeColor = System.Drawing.Color.Red;
-            this.lblError1.Location = new System.Drawing.Point(186, 23);
+            this.lblError1.Location = new System.Drawing.Point(305, 23);
             this.lblError1.Name = "lblError1";
             this.lblError1.Size = new System.Drawing.Size(11, 13);
             this.lblError1.TabIndex = 20;
@@ -384,7 +386,7 @@
             // 
             this.tbxQuizzName.Location = new System.Drawing.Point(80, 20);
             this.tbxQuizzName.Name = "tbxQuizzName";
-            this.tbxQuizzName.Size = new System.Drawing.Size(100, 20);
+            this.tbxQuizzName.Size = new System.Drawing.Size(219, 20);
             this.tbxQuizzName.TabIndex = 1;
             this.tbxQuizzName.TextChanged += new System.EventHandler(this.tbxQuizzName_TextChanged);
             // 
@@ -392,14 +394,14 @@
             // 
             this.rtbnQuestion.Location = new System.Drawing.Point(80, 75);
             this.rtbnQuestion.Name = "rtbnQuestion";
-            this.rtbnQuestion.Size = new System.Drawing.Size(100, 119);
+            this.rtbnQuestion.Size = new System.Drawing.Size(219, 119);
             this.rtbnQuestion.TabIndex = 2;
             this.rtbnQuestion.Text = "";
             this.rtbnQuestion.TextChanged += new System.EventHandler(this.rtbnQuestion_TextChanged);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(73, 335);
+            this.btnAdd.Location = new System.Drawing.Point(105, 352);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 7;
@@ -420,7 +422,7 @@
             // 
             this.tbxAnswer4.Location = new System.Drawing.Point(80, 285);
             this.tbxAnswer4.Name = "tbxAnswer4";
-            this.tbxAnswer4.Size = new System.Drawing.Size(100, 20);
+            this.tbxAnswer4.Size = new System.Drawing.Size(219, 20);
             this.tbxAnswer4.TabIndex = 6;
             this.tbxAnswer4.TextChanged += new System.EventHandler(this.tbxAnswer4_TextChanged);
             // 
@@ -437,7 +439,7 @@
             // 
             this.tbxAnswer3.Location = new System.Drawing.Point(80, 259);
             this.tbxAnswer3.Name = "tbxAnswer3";
-            this.tbxAnswer3.Size = new System.Drawing.Size(100, 20);
+            this.tbxAnswer3.Size = new System.Drawing.Size(219, 20);
             this.tbxAnswer3.TabIndex = 5;
             this.tbxAnswer3.TextChanged += new System.EventHandler(this.tbxAnswer3_TextChanged);
             // 
@@ -454,7 +456,7 @@
             // 
             this.tbxAnswer2.Location = new System.Drawing.Point(80, 233);
             this.tbxAnswer2.Name = "tbxAnswer2";
-            this.tbxAnswer2.Size = new System.Drawing.Size(100, 20);
+            this.tbxAnswer2.Size = new System.Drawing.Size(219, 20);
             this.tbxAnswer2.TabIndex = 4;
             this.tbxAnswer2.TextChanged += new System.EventHandler(this.tbxAnswer2_TextChanged);
             // 
@@ -472,7 +474,7 @@
             this.tbxAnswer1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tbxAnswer1.Location = new System.Drawing.Point(80, 207);
             this.tbxAnswer1.Name = "tbxAnswer1";
-            this.tbxAnswer1.Size = new System.Drawing.Size(100, 20);
+            this.tbxAnswer1.Size = new System.Drawing.Size(219, 20);
             this.tbxAnswer1.TabIndex = 3;
             this.tbxAnswer1.Text = "Correct Answer";
             this.toolTip1.SetToolTip(this.tbxAnswer1, "Write correct answer to the question here");
@@ -493,6 +495,16 @@
             // 
             this.timer10s.Interval = 10;
             this.timer10s.Tick += new System.EventHandler(this.timer10s_Tick);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(24, 352);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "<---";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -557,6 +569,7 @@
         private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

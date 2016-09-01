@@ -82,6 +82,7 @@ namespace Quizz_T4
             Save();
 
         }
+
         /// <summary>
         /// Spara funktionen
         /// Här tas informationen som blir inskrivet i formuläret och sparas i 2 filer.
@@ -91,26 +92,33 @@ namespace Quizz_T4
         {
 
 
-            string questionfile = @"stockquiz\" +  tbxQuizzName.Text + "_question" + ".quiz";
-            string answerfile = @"stockquiz\" +  tbxQuizzName.Text + "_answer" + ".quiz";
+            string questionfile = @"stockquiz\" + tbxQuizzName.Text + "_question" + ".quiz";
+            string answerfile = @"stockquiz\" + tbxQuizzName.Text + "_answer" + ".quiz";
 
-            if (tbxAnswer1.Text == "" || tbxAnswer2.Text == "" || tbxAnswer3.Text == "" || tbxAnswer4.Text == "" || rtbnQuestion.Text == "" || tbxQuizzName.Text == "")
+            if (tbxAnswer1.Text == "" || tbxAnswer2.Text == "" || tbxAnswer3.Text == "" || tbxAnswer4.Text == "" ||
+                rtbnQuestion.Text == "" || tbxQuizzName.Text == "")
             {
                 MessageBox.Show("You have to fill in all the fields");
             }
 
-            else if (tbxAnswer1.Text.Contains("|") || tbxAnswer2.Text.Contains("|") || tbxAnswer3.Text.Contains("|") || tbxAnswer4.Text.Contains("|") || rtbnQuestion.Text.Contains("|") || tbxQuizzName.Text.Contains("|"))
+            else if (tbxAnswer1.Text.Contains("|") || tbxAnswer2.Text.Contains("|") || tbxAnswer3.Text.Contains("|") ||
+                     tbxAnswer4.Text.Contains("|") || rtbnQuestion.Text.Contains("|") || tbxQuizzName.Text.Contains("|"))
             {
                 MessageBox.Show("You cant use the '|' sign");
 
             }
+            else if (tbxAnswer1.Text.Contains("Correct Answer"))
+            {
+                MessageBox.Show("Fill in all the fields!");
 
-            
+            }
+
+
             else
             {
                 if (iteration > 10)
                 {
-                    
+
                     MessageBox.Show("finished");
                     tbxAnswer1.Text = "";
                     tbxAnswer2.Text = "";
@@ -134,6 +142,7 @@ namespace Quizz_T4
                 }
                 else
                 {
+
                     foreach (Query item in questions)
                     {
                         questionlist += item.Question + "\r\n";
@@ -141,17 +150,27 @@ namespace Quizz_T4
 
                     foreach (Answers item in answers)
                     {
-                        answerlist += item.Answer1 + "|" + item.Answer2 + "|" + item.Answer3 + "|" + item.Answer4 + "\r\n";
+                        answerlist += item.Answer1 + "|" + item.Answer2 + "|" + item.Answer3 + "|" + item.Answer4 +
+                                      "\r\n";
+
                     }
 
-                    File.WriteAllText(questionfile, questionlist);
-                    File.WriteAllText(answerfile, answerlist);
-                    iteration++;
-                    MessageBox.Show("New question has been added to " + name);
-                }
 
+                    if (iteration > 10)
+                    {
+
+                        File.WriteAllText(questionfile, questionlist);
+                        File.WriteAllText(answerfile, answerlist);
+                    }
+
+
+                    MessageBox.Show("New question has been added to " + name);
+                    iteration++;
+
+                }
             }
         }
+
         private void Load()
         {
             answers.Clear();
@@ -349,6 +368,8 @@ namespace Quizz_T4
 
         private void btnResults_Click(object sender, EventArgs e)
         {
+
+            string[] prevScore = System.IO.File.ReadAllLines(@"previousScore\score.txt");
             MessageBox.Show(prevScore[0] + " / 10");
         }
 
@@ -486,6 +507,12 @@ namespace Quizz_T4
                 btnAnsr4.BackColor = Color.Transparent;
                 gbxQuiz.Enabled = true;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            tc.SelectedTab = tabMenu;
         }
     }
 }
