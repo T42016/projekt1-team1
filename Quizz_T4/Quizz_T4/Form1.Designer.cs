@@ -222,6 +222,7 @@
             // 
             // rtbxQuestion
             // 
+            this.rtbxQuestion.Enabled = false;
             this.rtbxQuestion.Location = new System.Drawing.Point(140, 18);
             this.rtbxQuestion.Margin = new System.Windows.Forms.Padding(2);
             this.rtbxQuestion.Name = "rtbxQuestion";
