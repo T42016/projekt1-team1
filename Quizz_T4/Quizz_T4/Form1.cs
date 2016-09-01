@@ -365,9 +365,11 @@ namespace Quizz_T4
                 System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"../../Sound/GameRight.wav");
                 player.Play();
 
+                rightAnswers++;
+                lblScore.Text = rightAnswers + " / 10";
+
                 PaintTheAnswers(questionNr);
 
-                rightAnswers++;
                 questionNr++;
                 
                 if (questionNr < 11)
@@ -416,8 +418,6 @@ namespace Quizz_T4
                     File.WriteAllText(@"previousScore\score.txt", prev);
                 }
             }
-
-            lblScore.Text = rightAnswers + " / 10";
         }
 
         private void PaintTheAnswers(int questionNr)
