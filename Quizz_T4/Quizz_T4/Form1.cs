@@ -30,6 +30,8 @@ namespace Quizz_T4
         public Form1()
         {
             InitializeComponent();
+            tabQuiz.Enabled = false;
+            tabCreator.Enabled = false;
         }
 
 
@@ -41,6 +43,9 @@ namespace Quizz_T4
             }
             else
             {
+                tabQuiz.Enabled = true;
+                tabMenu.Enabled = false;
+
                 timer10s.Start();
                 tc.SelectedTab = tabQuiz;
                 gbxQuiz.Enabled = false;
@@ -324,6 +329,8 @@ namespace Quizz_T4
             tc.SelectedTab = tabMenu;
             prgBar10s.Value = 0;
             timer10s.Stop();
+            tabQuiz.Enabled = false;
+            tabMenu.Enabled = true;
         }
             
         private void btnAnsr1_Click(object sender, EventArgs e)
@@ -349,6 +356,8 @@ namespace Quizz_T4
         private void btnQuizCreator_Click(object sender, EventArgs e)
         {
             tc.SelectedTab = tabCreator;
+            tabCreator.Enabled = true;
+            tabMenu.Enabled = false;
         }
 
         private void btnResults_Click(object sender, EventArgs e)
