@@ -30,8 +30,8 @@ namespace Quizz_T4
         public Form1()
         {
             InitializeComponent();
-            btnAnsr1.Enabled = false;
-            btnAnsr2.Enabled = false;
+            tabQuiz.Enabled = false;
+            tabCreator.Enabled = false;
             btnAnsr3.Enabled = false;
             btnAnsr4.Enabled = false;
             btnQuit.Enabled = false;
@@ -46,9 +46,9 @@ namespace Quizz_T4
             }
             else
             {
-                btnAnsr1.Enabled = true;
-                btnAnsr2.Enabled = true;
-                btnAnsr3.Enabled = true;
+                tabQuiz.Enabled = true;
+                tabMenu.Enabled = false;
+
                 btnAnsr4.Enabled = true;
                 btnQuit.Enabled = true;
                 timer10s.Start();
@@ -339,6 +339,8 @@ namespace Quizz_T4
             tc.SelectedTab = tabMenu;
             prgBar10s.Value = 0;
             timer10s.Stop();
+            tabQuiz.Enabled = false;
+            tabMenu.Enabled = true;
         }
             
         private void btnAnsr1_Click(object sender, EventArgs e)
@@ -364,6 +366,8 @@ namespace Quizz_T4
         private void btnQuizCreator_Click(object sender, EventArgs e)
         {
             tc.SelectedTab = tabCreator;
+            tabCreator.Enabled = true;
+            tabMenu.Enabled = false;
         }
 
         private void btnResults_Click(object sender, EventArgs e)
@@ -382,9 +386,11 @@ namespace Quizz_T4
                 System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"../../Sound/GameRight.wav");
                 player.Play();
 
+                rightAnswers++;
+                lblScore.Text = rightAnswers + " / 10";
+
                 PaintTheAnswers(questionNr);
 
-                rightAnswers++;
                 questionNr++;
                 
                 if (questionNr < 11)
@@ -433,8 +439,6 @@ namespace Quizz_T4
                     File.WriteAllText(@"previousScore\score.txt", prev);
                 }
             }
-
-            lblScore.Text = rightAnswers + " / 10";
         }
 
         private void PaintTheAnswers(int questionNr)

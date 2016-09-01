@@ -83,6 +83,7 @@
             this.tc.Controls.Add(this.tabMenu);
             this.tc.Controls.Add(this.tabQuiz);
             this.tc.Controls.Add(this.tabCreator);
+            this.tc.HotTrack = true;
             this.tc.Location = new System.Drawing.Point(1, 2);
             this.tc.Margin = new System.Windows.Forms.Padding(2);
             this.tc.Name = "tc";
