@@ -322,7 +322,6 @@ namespace Quizz_T4
             timer10s.Stop();
         }
             
-
         private void btnAnsr1_Click(object sender, EventArgs e)
         {
             AnswerQuestion(((Control)sender).Text);
@@ -350,7 +349,7 @@ namespace Quizz_T4
 
         private void btnResults_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(prevScore[0]);
+            MessageBox.Show(prevScore[0] + " / 10");
         }
 
         private void AnswerQuestion(string questionAnswer)
@@ -359,12 +358,14 @@ namespace Quizz_T4
             prgBar10s.Value = 0;
             if (questionAnswer == scrambledInformation[questionNr - 1, 1].ToString())
             {
-                rightAnswers++;
-                questionNr++;
-
                 System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"../../Sound/GameRight.wav");
                 player.Play();
 
+                PaintTheAnswers(questionNr);
+
+                rightAnswers++;
+                questionNr++;
+                
                 if (questionNr < 11)
                 {
                     rtbxQuestion.Text = scrambledInformation[questionNr - 1, 0];
@@ -385,11 +386,13 @@ namespace Quizz_T4
             }
             else
             {
-                questionNr++;
-
                 System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"../../Sound/GameFailure.wav");
                 player.Play();
 
+                PaintTheAnswers(questionNr);
+
+                questionNr++;
+                
                 if (questionNr < 11)
                 {
                     rtbxQuestion.Text = scrambledInformation[questionNr - 1, 0];
@@ -411,6 +414,78 @@ namespace Quizz_T4
             }
 
             lblScore.Text = rightAnswers + " / 10";
+        }
+
+        private void PaintTheAnswers(int questionNr)
+        {
+            if (btnAnsr1.Text == scrambledInformation[questionNr - 1, 1].ToString())
+            {
+                gbxQuiz.Enabled = false;
+                btnAnsr1.BackColor = Color.LightGreen;
+                btnAnsr2.BackColor = Color.LightCoral;
+                btnAnsr3.BackColor = Color.LightCoral;
+                btnAnsr4.BackColor = Color.LightCoral;
+                Application.DoEvents();
+
+                Thread.Sleep(2000);
+
+                btnAnsr1.BackColor = Color.Transparent;
+                btnAnsr2.BackColor = Color.Transparent;
+                btnAnsr3.BackColor = Color.Transparent;
+                btnAnsr4.BackColor = Color.Transparent;
+                gbxQuiz.Enabled = true;
+            }
+            else if (btnAnsr2.Text == scrambledInformation[questionNr - 1, 1].ToString())
+            {
+                gbxQuiz.Enabled = false;
+                btnAnsr1.BackColor = Color.LightCoral;
+                btnAnsr2.BackColor = Color.LightGreen;
+                btnAnsr3.BackColor = Color.LightCoral;
+                btnAnsr4.BackColor = Color.LightCoral;
+                Application.DoEvents();
+
+                Thread.Sleep(2000);
+
+                btnAnsr1.BackColor = Color.Transparent;
+                btnAnsr2.BackColor = Color.Transparent;
+                btnAnsr3.BackColor = Color.Transparent;
+                btnAnsr4.BackColor = Color.Transparent;
+                gbxQuiz.Enabled = true;
+            }
+            else if (btnAnsr3.Text == scrambledInformation[questionNr - 1, 1].ToString())
+            {
+                gbxQuiz.Enabled = false;
+                btnAnsr1.BackColor = Color.LightCoral;
+                btnAnsr2.BackColor = Color.LightCoral;
+                btnAnsr3.BackColor = Color.LightGreen;
+                btnAnsr4.BackColor = Color.LightCoral;
+                Application.DoEvents();
+
+                Thread.Sleep(2000);
+
+                btnAnsr1.BackColor = Color.Transparent;
+                btnAnsr2.BackColor = Color.Transparent;
+                btnAnsr3.BackColor = Color.Transparent;
+                btnAnsr4.BackColor = Color.Transparent;
+                gbxQuiz.Enabled = true;
+            }
+            else
+            {
+                gbxQuiz.Enabled = false;
+                btnAnsr1.BackColor = Color.LightCoral;
+                btnAnsr2.BackColor = Color.LightCoral;
+                btnAnsr3.BackColor = Color.LightCoral;
+                btnAnsr4.BackColor = Color.LightGreen;
+                Application.DoEvents();
+
+                Thread.Sleep(2000);
+
+                btnAnsr1.BackColor = Color.Transparent;
+                btnAnsr2.BackColor = Color.Transparent;
+                btnAnsr3.BackColor = Color.Transparent;
+                btnAnsr4.BackColor = Color.Transparent;
+                gbxQuiz.Enabled = true;
+            }
         }
     }
 }
