@@ -472,7 +472,6 @@
             this.tbxAnswer1.Name = "tbxAnswer1";
             this.tbxAnswer1.Size = new System.Drawing.Size(219, 20);
             this.tbxAnswer1.TabIndex = 3;
-            this.toolTip1.SetToolTip(this.tbxAnswer1, "Write correct answer to the question here");
             this.tbxAnswer1.Click += new System.EventHandler(this.tbxAnswer1_Click);
             this.tbxAnswer1.TextChanged += new System.EventHandler(this.tbxAnswer1_TextChanged);
             this.tbxAnswer1.Leave += new System.EventHandler(this.tbxAnswer1_Leave);

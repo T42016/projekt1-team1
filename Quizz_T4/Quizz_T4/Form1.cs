@@ -167,25 +167,21 @@ namespace Quizz_T4
 
                 }
             }
+        }
 
-        private void LoadFiles()
         private void LoadFiles()
         {
-
             openFileDialog1.InitialDirectory = @"..\stockquiz";
             openFileDialog1.Filter = "Text Files (.quiz)|*.quiz|All Files (*.*)|*.*";
             openFileDialog1.FilterIndex = 0;
             openFileDialog1.RestoreDirectory = true;
             DialogResult result = openFileDialog1.ShowDialog();
             string file = openFileDialog1.FileName;
-
-            
             
             if (result == DialogResult.OK)
             {
                 if (file.Contains("answer"))
-                {
-                          
+                {    
                     answers.Clear();
                     
                     string[] answersLines = System.IO.File.ReadAllLines(file);
@@ -198,12 +194,12 @@ namespace Quizz_T4
 
                         answers.Add(answerLoad);
                     }
-
-
-
+                    
                     var pos = file.IndexOf("answer");
                     var question = file.Remove(pos, 6).Insert(pos, "question");
+
                     questions.Clear();
+
                     string[] questionLines = System.IO.File.ReadAllLines(question);
 
                     foreach (string line in questionLines)
@@ -220,8 +216,7 @@ namespace Quizz_T4
                     questions.Clear();
                    
                     string[] questionLines = System.IO.File.ReadAllLines(file);
-
-
+                    
                     foreach (string line in questionLines)
                     {
                         string[] words = line.Split('|');
@@ -232,11 +227,11 @@ namespace Quizz_T4
                     }
 
                     var pos = file.IndexOf("question");
-                    var question = file.Remove(pos, 8).Insert(pos, "answer");
+                    var answer = file.Remove(pos, 8).Insert(pos, "answer");
 
                     answers.Clear();
 
-                    string[] answersLines = System.IO.File.ReadAllLines(file);
+                    string[] answersLines = System.IO.File.ReadAllLines(answer);
 
                     foreach (string line in answersLines)
                     {
@@ -246,11 +241,7 @@ namespace Quizz_T4
 
                         answers.Add(answerLoad);
                     }
-
                 }
-
-
-
             }
         }
 
@@ -376,7 +367,6 @@ namespace Quizz_T4
 
         private void btnChooseQuiz_Click(object sender, EventArgs e)
         {
-            LoadFiles();
             LoadFiles();
             MessageBox.Show("Quiz loaded");
         }
