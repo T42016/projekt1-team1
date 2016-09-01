@@ -104,9 +104,9 @@
             // 
             // btnChooseQuiz
             // 
-            this.btnChooseQuiz.Location = new System.Drawing.Point(227, 276);
+            this.btnChooseQuiz.Location = new System.Drawing.Point(87, 117);
             this.btnChooseQuiz.Name = "btnChooseQuiz";
-            this.btnChooseQuiz.Size = new System.Drawing.Size(129, 53);
+            this.btnChooseQuiz.Size = new System.Drawing.Size(320, 80);
             this.btnChooseQuiz.TabIndex = 3;
             this.btnChooseQuiz.Text = "LoadFiles quiz";
             this.btnChooseQuiz.UseVisualStyleBackColor = true;
@@ -114,9 +114,9 @@
             // 
             // btnResults
             // 
-            this.btnResults.Location = new System.Drawing.Point(92, 276);
+            this.btnResults.Location = new System.Drawing.Point(87, 203);
             this.btnResults.Name = "btnResults";
-            this.btnResults.Size = new System.Drawing.Size(129, 53);
+            this.btnResults.Size = new System.Drawing.Size(320, 80);
             this.btnResults.TabIndex = 2;
             this.btnResults.Text = "Previous Result";
             this.btnResults.UseVisualStyleBackColor = true;
@@ -124,9 +124,9 @@
             // 
             // btnQuizCreator
             // 
-            this.btnQuizCreator.Location = new System.Drawing.Point(227, 214);
+            this.btnQuizCreator.Location = new System.Drawing.Point(87, 289);
             this.btnQuizCreator.Name = "btnQuizCreator";
-            this.btnQuizCreator.Size = new System.Drawing.Size(129, 53);
+            this.btnQuizCreator.Size = new System.Drawing.Size(320, 80);
             this.btnQuizCreator.TabIndex = 1;
             this.btnQuizCreator.Text = "Quiz Creator";
             this.btnQuizCreator.UseVisualStyleBackColor = true;
@@ -134,10 +134,10 @@
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(92, 214);
+            this.btnStart.Location = new System.Drawing.Point(87, 32);
             this.btnStart.Margin = new System.Windows.Forms.Padding(2);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(129, 53);
+            this.btnStart.Size = new System.Drawing.Size(320, 80);
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "Start Quiz";
             this.btnStart.UseVisualStyleBackColor = true;
