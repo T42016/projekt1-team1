@@ -104,42 +104,46 @@
             // 
             // btnChooseQuiz
             // 
+            this.btnChooseQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.btnChooseQuiz.Location = new System.Drawing.Point(87, 117);
             this.btnChooseQuiz.Name = "btnChooseQuiz";
             this.btnChooseQuiz.Size = new System.Drawing.Size(320, 80);
             this.btnChooseQuiz.TabIndex = 3;
-            this.btnChooseQuiz.Text = "LoadFiles quiz";
+            this.btnChooseQuiz.Text = "Select quiz";
             this.btnChooseQuiz.UseVisualStyleBackColor = true;
             this.btnChooseQuiz.Click += new System.EventHandler(this.btnChooseQuiz_Click);
             // 
             // btnResults
             // 
+            this.btnResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.btnResults.Location = new System.Drawing.Point(87, 203);
             this.btnResults.Name = "btnResults";
             this.btnResults.Size = new System.Drawing.Size(320, 80);
             this.btnResults.TabIndex = 2;
-            this.btnResults.Text = "Previous Result";
+            this.btnResults.Text = "Previous quiz result";
             this.btnResults.UseVisualStyleBackColor = true;
             this.btnResults.Click += new System.EventHandler(this.btnResults_Click);
             // 
             // btnQuizCreator
             // 
+            this.btnQuizCreator.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.btnQuizCreator.Location = new System.Drawing.Point(87, 289);
             this.btnQuizCreator.Name = "btnQuizCreator";
             this.btnQuizCreator.Size = new System.Drawing.Size(320, 80);
             this.btnQuizCreator.TabIndex = 1;
-            this.btnQuizCreator.Text = "Quiz Creator";
+            this.btnQuizCreator.Text = "Quiz creator";
             this.btnQuizCreator.UseVisualStyleBackColor = true;
             this.btnQuizCreator.Click += new System.EventHandler(this.btnQuizCreator_Click);
             // 
             // btnStart
             // 
+            this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.btnStart.Location = new System.Drawing.Point(87, 32);
             this.btnStart.Margin = new System.Windows.Forms.Padding(2);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(320, 80);
             this.btnStart.TabIndex = 0;
-            this.btnStart.Text = "Start Quiz";
+            this.btnStart.Text = "Start quiz";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
@@ -182,11 +186,12 @@
             // 
             // btnQuit
             // 
-            this.btnQuit.Location = new System.Drawing.Point(22, 334);
+            this.btnQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnQuit.Location = new System.Drawing.Point(10, 334);
             this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(95, 44);
+            this.btnQuit.Size = new System.Drawing.Size(100, 50);
             this.btnQuit.TabIndex = 29;
-            this.btnQuit.Text = "Abort Mission!";
+            this.btnQuit.Text = "Abort quiz!";
             this.btnQuit.UseVisualStyleBackColor = true;
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
@@ -197,7 +202,7 @@
             this.prgBar10s.Location = new System.Drawing.Point(138, 334);
             this.prgBar10s.Name = "prgBar10s";
             this.prgBar10s.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.prgBar10s.Size = new System.Drawing.Size(237, 44);
+            this.prgBar10s.Size = new System.Drawing.Size(234, 50);
             this.prgBar10s.TabIndex = 28;
             // 
             // rtbxQuestion
@@ -288,11 +293,12 @@
             // 
             // btnCreatorToMenu
             // 
-            this.btnCreatorToMenu.Location = new System.Drawing.Point(24, 352);
+            this.btnCreatorToMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnCreatorToMenu.Location = new System.Drawing.Point(10, 348);
             this.btnCreatorToMenu.Name = "btnCreatorToMenu";
-            this.btnCreatorToMenu.Size = new System.Drawing.Size(75, 23);
+            this.btnCreatorToMenu.Size = new System.Drawing.Size(100, 50);
             this.btnCreatorToMenu.TabIndex = 26;
-            this.btnCreatorToMenu.Text = "Menu";
+            this.btnCreatorToMenu.Text = "Back to menu";
             this.btnCreatorToMenu.UseVisualStyleBackColor = true;
             this.btnCreatorToMenu.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -300,7 +306,7 @@
             // 
             this.lblError6.AutoSize = true;
             this.lblError6.ForeColor = System.Drawing.Color.Red;
-            this.lblError6.Location = new System.Drawing.Point(305, 285);
+            this.lblError6.Location = new System.Drawing.Point(331, 281);
             this.lblError6.Name = "lblError6";
             this.lblError6.Size = new System.Drawing.Size(11, 13);
             this.lblError6.TabIndex = 25;
@@ -311,7 +317,7 @@
             // 
             this.lblError5.AutoSize = true;
             this.lblError5.ForeColor = System.Drawing.Color.Red;
-            this.lblError5.Location = new System.Drawing.Point(305, 259);
+            this.lblError5.Location = new System.Drawing.Point(331, 255);
             this.lblError5.Name = "lblError5";
             this.lblError5.Size = new System.Drawing.Size(11, 13);
             this.lblError5.TabIndex = 24;
@@ -322,7 +328,7 @@
             // 
             this.lblError4.AutoSize = true;
             this.lblError4.ForeColor = System.Drawing.Color.Red;
-            this.lblError4.Location = new System.Drawing.Point(305, 233);
+            this.lblError4.Location = new System.Drawing.Point(331, 229);
             this.lblError4.Name = "lblError4";
             this.lblError4.Size = new System.Drawing.Size(11, 13);
             this.lblError4.TabIndex = 23;
@@ -333,7 +339,7 @@
             // 
             this.lblError3.AutoSize = true;
             this.lblError3.ForeColor = System.Drawing.Color.Red;
-            this.lblError3.Location = new System.Drawing.Point(305, 207);
+            this.lblError3.Location = new System.Drawing.Point(331, 203);
             this.lblError3.Name = "lblError3";
             this.lblError3.Size = new System.Drawing.Size(11, 13);
             this.lblError3.TabIndex = 22;
@@ -344,7 +350,7 @@
             // 
             this.lblError2.AutoSize = true;
             this.lblError2.ForeColor = System.Drawing.Color.Red;
-            this.lblError2.Location = new System.Drawing.Point(305, 75);
+            this.lblError2.Location = new System.Drawing.Point(331, 58);
             this.lblError2.Name = "lblError2";
             this.lblError2.Size = new System.Drawing.Size(11, 13);
             this.lblError2.TabIndex = 21;
@@ -355,7 +361,7 @@
             // 
             this.lblError1.AutoSize = true;
             this.lblError1.ForeColor = System.Drawing.Color.Red;
-            this.lblError1.Location = new System.Drawing.Point(305, 23);
+            this.lblError1.Location = new System.Drawing.Point(331, 15);
             this.lblError1.Name = "lblError1";
             this.lblError1.Size = new System.Drawing.Size(11, 13);
             this.lblError1.TabIndex = 20;
@@ -365,7 +371,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(7, 20);
+            this.lblName.Location = new System.Drawing.Point(7, 15);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(60, 13);
             this.lblName.TabIndex = 19;
@@ -373,7 +379,7 @@
             // 
             // tbxQuizzName
             // 
-            this.tbxQuizzName.Location = new System.Drawing.Point(80, 20);
+            this.tbxQuizzName.Location = new System.Drawing.Point(106, 12);
             this.tbxQuizzName.Name = "tbxQuizzName";
             this.tbxQuizzName.Size = new System.Drawing.Size(219, 20);
             this.tbxQuizzName.TabIndex = 1;
@@ -381,7 +387,7 @@
             // 
             // rtbnQuestion
             // 
-            this.rtbnQuestion.Location = new System.Drawing.Point(80, 75);
+            this.rtbnQuestion.Location = new System.Drawing.Point(106, 55);
             this.rtbnQuestion.Name = "rtbnQuestion";
             this.rtbnQuestion.Size = new System.Drawing.Size(219, 119);
             this.rtbnQuestion.TabIndex = 2;
@@ -390,26 +396,27 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(105, 352);
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnAdd.Location = new System.Drawing.Point(116, 348);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(100, 50);
             this.btnAdd.TabIndex = 7;
-            this.btnAdd.Text = "Add";
+            this.btnAdd.Text = "Add question";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblAnswer4
             // 
             this.lblAnswer4.AutoSize = true;
-            this.lblAnswer4.Location = new System.Drawing.Point(7, 285);
+            this.lblAnswer4.Location = new System.Drawing.Point(7, 281);
             this.lblAnswer4.Name = "lblAnswer4";
-            this.lblAnswer4.Size = new System.Drawing.Size(51, 13);
+            this.lblAnswer4.Size = new System.Drawing.Size(89, 13);
             this.lblAnswer4.TabIndex = 9;
-            this.lblAnswer4.Text = "Answer 4";
+            this.lblAnswer4.Text = "Incorrect answer:";
             // 
             // tbxAnswer4
             // 
-            this.tbxAnswer4.Location = new System.Drawing.Point(80, 285);
+            this.tbxAnswer4.Location = new System.Drawing.Point(106, 278);
             this.tbxAnswer4.Name = "tbxAnswer4";
             this.tbxAnswer4.Size = new System.Drawing.Size(219, 20);
             this.tbxAnswer4.TabIndex = 6;
@@ -418,15 +425,15 @@
             // lblAnswer3
             // 
             this.lblAnswer3.AutoSize = true;
-            this.lblAnswer3.Location = new System.Drawing.Point(7, 259);
+            this.lblAnswer3.Location = new System.Drawing.Point(7, 255);
             this.lblAnswer3.Name = "lblAnswer3";
-            this.lblAnswer3.Size = new System.Drawing.Size(51, 13);
+            this.lblAnswer3.Size = new System.Drawing.Size(89, 13);
             this.lblAnswer3.TabIndex = 7;
-            this.lblAnswer3.Text = "Answer 3";
+            this.lblAnswer3.Text = "Incorrect answer:";
             // 
             // tbxAnswer3
             // 
-            this.tbxAnswer3.Location = new System.Drawing.Point(80, 259);
+            this.tbxAnswer3.Location = new System.Drawing.Point(106, 252);
             this.tbxAnswer3.Name = "tbxAnswer3";
             this.tbxAnswer3.Size = new System.Drawing.Size(219, 20);
             this.tbxAnswer3.TabIndex = 5;
@@ -435,15 +442,15 @@
             // lblAnswer2
             // 
             this.lblAnswer2.AutoSize = true;
-            this.lblAnswer2.Location = new System.Drawing.Point(7, 233);
+            this.lblAnswer2.Location = new System.Drawing.Point(7, 229);
             this.lblAnswer2.Name = "lblAnswer2";
-            this.lblAnswer2.Size = new System.Drawing.Size(51, 13);
+            this.lblAnswer2.Size = new System.Drawing.Size(89, 13);
             this.lblAnswer2.TabIndex = 5;
-            this.lblAnswer2.Text = "Answer 2";
+            this.lblAnswer2.Text = "Incorrect answer:";
             // 
             // tbxAnswer2
             // 
-            this.tbxAnswer2.Location = new System.Drawing.Point(80, 233);
+            this.tbxAnswer2.Location = new System.Drawing.Point(106, 226);
             this.tbxAnswer2.Name = "tbxAnswer2";
             this.tbxAnswer2.Size = new System.Drawing.Size(219, 20);
             this.tbxAnswer2.TabIndex = 4;
@@ -452,20 +459,19 @@
             // lblAnswer1
             // 
             this.lblAnswer1.AutoSize = true;
-            this.lblAnswer1.Location = new System.Drawing.Point(7, 207);
+            this.lblAnswer1.Location = new System.Drawing.Point(7, 203);
             this.lblAnswer1.Name = "lblAnswer1";
-            this.lblAnswer1.Size = new System.Drawing.Size(51, 13);
+            this.lblAnswer1.Size = new System.Drawing.Size(81, 13);
             this.lblAnswer1.TabIndex = 3;
-            this.lblAnswer1.Text = "Answer 1";
+            this.lblAnswer1.Text = "Correct answer:";
             // 
             // tbxAnswer1
             // 
-            this.tbxAnswer1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tbxAnswer1.Location = new System.Drawing.Point(80, 207);
+            this.tbxAnswer1.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbxAnswer1.Location = new System.Drawing.Point(106, 200);
             this.tbxAnswer1.Name = "tbxAnswer1";
             this.tbxAnswer1.Size = new System.Drawing.Size(219, 20);
             this.tbxAnswer1.TabIndex = 3;
-            this.tbxAnswer1.Text = "Correct Answer";
             this.toolTip1.SetToolTip(this.tbxAnswer1, "Write correct answer to the question here");
             this.tbxAnswer1.Click += new System.EventHandler(this.tbxAnswer1_Click);
             this.tbxAnswer1.TextChanged += new System.EventHandler(this.tbxAnswer1_TextChanged);
@@ -474,11 +480,11 @@
             // lblQuestion
             // 
             this.lblQuestion.AutoSize = true;
-            this.lblQuestion.Location = new System.Drawing.Point(7, 75);
+            this.lblQuestion.Location = new System.Drawing.Point(7, 58);
             this.lblQuestion.Name = "lblQuestion";
-            this.lblQuestion.Size = new System.Drawing.Size(49, 13);
+            this.lblQuestion.Size = new System.Drawing.Size(52, 13);
             this.lblQuestion.TabIndex = 1;
-            this.lblQuestion.Text = "Question";
+            this.lblQuestion.Text = "Question:";
             // 
             // timer10s
             // 

@@ -540,5 +540,7 @@ namespace Quizz_T4
             tabMenu.Enabled = true;
             tc.SelectedTab = tabMenu;
         }
+
+        
     }
 }
