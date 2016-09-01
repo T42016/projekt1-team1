@@ -417,6 +417,9 @@ namespace Quizz_T4
                     btnAnsr4.Text = "";
                     lblScore.Text = "";
 
+                    tabQuiz.Enabled = false;
+                    tabMenu.Enabled = true;
+
                     timer10s.Stop();
                     prgBar10s.Value = 0;
                     tc.SelectedTab = tabMenu;
@@ -451,6 +454,9 @@ namespace Quizz_T4
                     btnAnsr3.Text = "";
                     btnAnsr4.Text = "";
                     lblScore.Text = "";
+
+                    tabQuiz.Enabled = false;
+                    tabMenu.Enabled = true;
 
                     timer10s.Stop();
                     prgBar10s.Value = 0;
