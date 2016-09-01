@@ -17,6 +17,7 @@ namespace Quizz_T4
         static int iteration = 1;
         private int rightAnswers;
         private int questionNr;
+        
 
 
         List<Query> questions = new List<Query>();
@@ -145,41 +146,90 @@ namespace Quizz_T4
                 MessageBox.Show("New question has been added to " + name);
             }
         }
-        private void Load()
+
+        private void LoadFiles()
         {
-            answers.Clear();
-            /*
-            DirectoryInfo di = new DirectoryInfo("C:\\");
-            var fileInfo = di.GetFiles("*.quizz", SearchOption.AllDirectories);
-            foreach (var file in fileInfo)
+
+            openFileDialog1.InitialDirectory = @"..\stockquiz";
+            openFileDialog1.Filter = "Text Files (.quiz)|*.quiz|All Files (*.*)|*.*";
+            openFileDialog1.FilterIndex = 0;
+            openFileDialog1.RestoreDirectory = true;
+            DialogResult result = openFileDialog1.ShowDialog();
+            string file = openFileDialog1.FileName;
+
+            
+            
+            if (result == DialogResult.OK)
             {
-                File.ReadAllLines(@"");
+                if (file.Contains("answer"))
+                {
+                          
+                    answers.Clear();
+                    
+                    string[] answersLines = System.IO.File.ReadAllLines(file);
+
+                    foreach (string line in answersLines)
+                    {
+                        string[] words = line.Split('|');
+
+                        Answers answerLoad = new Answers(words[0], words[1], words[2], words[3]);
+
+                        answers.Add(answerLoad);
+                    }
+
+
+
+                    var pos = file.IndexOf("answer");
+                    var question = file.Remove(pos, 6).Insert(pos, "question");
+                    questions.Clear();
+                    string[] questionLines = System.IO.File.ReadAllLines(question);
+
+                    foreach (string line in questionLines)
+                    {
+                        string[] words = line.Split('|');
+
+                        Query questionLoad = new Query(words[0]);
+
+                        questions.Add(questionLoad);
+                    }
+                }
+                else
+                {
+                    questions.Clear();
+                   
+                    string[] questionLines = System.IO.File.ReadAllLines(file);
+
+
+                    foreach (string line in questionLines)
+                    {
+                        string[] words = line.Split('|');
+
+                        Query questionLoad = new Query(words[0]);
+
+                        questions.Add(questionLoad);
+                    }
+
+                    var pos = file.IndexOf("question");
+                    var question = file.Remove(pos, 8).Insert(pos, "answer");
+
+                    answers.Clear();
+
+                    string[] answersLines = System.IO.File.ReadAllLines(file);
+
+                    foreach (string line in answersLines)
+                    {
+                        string[] words = line.Split('|');
+
+                        Answers answerLoad = new Answers(words[0], words[1], words[2], words[3]);
+
+                        answers.Add(answerLoad);
+                    }
+
+                }
+
+
+
             }
-            */
-
-            string[] answersLines = System.IO.File.ReadAllLines(@"stockquiz\testAnswers.txt");
-
-            foreach (string line in answersLines)
-            {
-                string[] words = line.Split('|');
-
-                Answers answerLoad = new Answers(words[0], words[1], words[2], words[3]);
-
-                answers.Add(answerLoad);
-            }
-
-            questions.Clear();
-            string[] questionLines = System.IO.File.ReadAllLines(@"stockquiz\testQuestions.txt");
-
-            foreach (string line in questionLines)
-            {
-                string[] words = line.Split('|');
-
-                Query questionLoad = new Query(words[0]);
-
-                questions.Add(questionLoad);
-            }
-
         }
 
 
@@ -288,7 +338,8 @@ namespace Quizz_T4
 
         private void btnChooseQuiz_Click(object sender, EventArgs e)
         {
-            Load();
+
+            LoadFiles();
             MessageBox.Show("Quiz loaded");
         }
 
