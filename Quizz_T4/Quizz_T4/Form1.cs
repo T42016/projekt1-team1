@@ -32,9 +32,6 @@ namespace Quizz_T4
             InitializeComponent();
             tabQuiz.Enabled = false;
             tabCreator.Enabled = false;
-            btnAnsr3.Enabled = false;
-            btnAnsr4.Enabled = false;
-            btnQuit.Enabled = false;
         }
 
 
@@ -48,16 +45,16 @@ namespace Quizz_T4
             {
                 tabQuiz.Enabled = true;
                 tabMenu.Enabled = false;
-
-                btnAnsr4.Enabled = true;
-                btnQuit.Enabled = true;
-                timer10s.Start();
                 tc.SelectedTab = tabQuiz;
-                gbxQuiz.Enabled = false;
-                Thread.Sleep(500);
-                gbxQuiz.Enabled = true;
-                rightAnswers = 0;
+
+                timer10s.Start();
                 prgBar10s.Value = 0;
+
+                tabQuiz.Enabled = false;
+                Thread.Sleep(500);
+                tabQuiz.Enabled = true;
+
+                rightAnswers = 0;
                 questionNr = 1;
                 lblScore.Text = rightAnswers + " / 10";
 
@@ -171,7 +168,7 @@ namespace Quizz_T4
             }
         }
 
-        private void Load()
+        private void LoadFiles()
         {
             answers.Clear();
             /*
@@ -330,12 +327,20 @@ namespace Quizz_T4
 
         private void btnChooseQuiz_Click(object sender, EventArgs e)
         {
-            Load();
+            LoadFiles();
             MessageBox.Show("Quiz loaded");
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
         {
+            rtbxQuestion.Text = "";
+
+            btnAnsr1.Text = "";
+            btnAnsr2.Text = "";
+            btnAnsr3.Text = "";
+            btnAnsr4.Text = "";
+            lblScore.Text = "";
+
             tc.SelectedTab = tabMenu;
             prgBar10s.Value = 0;
             timer10s.Stop();
@@ -404,6 +409,14 @@ namespace Quizz_T4
                 }
                 else
                 {
+                    rtbxQuestion.Text = "";
+
+                    btnAnsr1.Text = "";
+                    btnAnsr2.Text = "";
+                    btnAnsr3.Text = "";
+                    btnAnsr4.Text = "";
+                    lblScore.Text = "";
+
                     timer10s.Stop();
                     prgBar10s.Value = 0;
                     tc.SelectedTab = tabMenu;
@@ -431,6 +444,14 @@ namespace Quizz_T4
                 }
                 else
                 {
+                    rtbxQuestion.Text = "";
+
+                    btnAnsr1.Text = "";
+                    btnAnsr2.Text = "";
+                    btnAnsr3.Text = "";
+                    btnAnsr4.Text = "";
+                    lblScore.Text = "";
+
                     timer10s.Stop();
                     prgBar10s.Value = 0;
                     tc.SelectedTab = tabMenu;
@@ -445,7 +466,7 @@ namespace Quizz_T4
         {
             if (btnAnsr1.Text == scrambledInformation[questionNr - 1, 1].ToString())
             {
-                gbxQuiz.Enabled = false;
+                tabQuiz.Enabled = false;
                 btnAnsr1.BackColor = Color.LightGreen;
                 btnAnsr2.BackColor = Color.LightCoral;
                 btnAnsr3.BackColor = Color.LightCoral;
@@ -458,11 +479,11 @@ namespace Quizz_T4
                 btnAnsr2.BackColor = Color.Transparent;
                 btnAnsr3.BackColor = Color.Transparent;
                 btnAnsr4.BackColor = Color.Transparent;
-                gbxQuiz.Enabled = true;
+                tabQuiz.Enabled = true;
             }
             else if (btnAnsr2.Text == scrambledInformation[questionNr - 1, 1].ToString())
             {
-                gbxQuiz.Enabled = false;
+                tabQuiz.Enabled = false;
                 btnAnsr1.BackColor = Color.LightCoral;
                 btnAnsr2.BackColor = Color.LightGreen;
                 btnAnsr3.BackColor = Color.LightCoral;
@@ -475,11 +496,11 @@ namespace Quizz_T4
                 btnAnsr2.BackColor = Color.Transparent;
                 btnAnsr3.BackColor = Color.Transparent;
                 btnAnsr4.BackColor = Color.Transparent;
-                gbxQuiz.Enabled = true;
+                tabQuiz.Enabled = true;
             }
             else if (btnAnsr3.Text == scrambledInformation[questionNr - 1, 1].ToString())
             {
-                gbxQuiz.Enabled = false;
+                tabQuiz.Enabled = false;
                 btnAnsr1.BackColor = Color.LightCoral;
                 btnAnsr2.BackColor = Color.LightCoral;
                 btnAnsr3.BackColor = Color.LightGreen;
@@ -492,11 +513,11 @@ namespace Quizz_T4
                 btnAnsr2.BackColor = Color.Transparent;
                 btnAnsr3.BackColor = Color.Transparent;
                 btnAnsr4.BackColor = Color.Transparent;
-                gbxQuiz.Enabled = true;
+                tabQuiz.Enabled = true;
             }
             else
             {
-                gbxQuiz.Enabled = false;
+                tabQuiz.Enabled = false;
                 btnAnsr1.BackColor = Color.LightCoral;
                 btnAnsr2.BackColor = Color.LightCoral;
                 btnAnsr3.BackColor = Color.LightCoral;
@@ -509,13 +530,14 @@ namespace Quizz_T4
                 btnAnsr2.BackColor = Color.Transparent;
                 btnAnsr3.BackColor = Color.Transparent;
                 btnAnsr4.BackColor = Color.Transparent;
-                gbxQuiz.Enabled = true;
+                tabQuiz.Enabled = true;
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            tabCreator.Enabled = false;
+            tabMenu.Enabled = true;
             tc.SelectedTab = tabMenu;
         }
     }
