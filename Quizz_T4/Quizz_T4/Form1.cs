@@ -290,7 +290,7 @@ namespace Quizz_T4
             string[,] information = new string[questions.Count, 5];
             string[] theAnswers = new string[4];
             
-            for (int a = 0; a < 10; a++) 
+            for (int a = 0; a < information.GetLength(0); a++) 
             {
                 information[a, 0] = questions[a].Question;
 
@@ -325,184 +325,39 @@ namespace Quizz_T4
 
         private void btnAnsr1_Click(object sender, EventArgs e)
         {
-            timer10s.Start();
-            prgBar10s.Value = 0;
-            if (btnAnsr1.Text == scrambledInformation[questionNr - 1, 1].ToString())
-            {
-                rightAnswers++;
-                questionNr++;
-
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"../../Sound/GameRight.wav");
-                player.Play();
-
-                if (questionNr < 11)
-                {
-                    rtbxQuestion.Text = scrambledInformation[questionNr - 1, 0];
-
-                    btnAnsr1.Text = scrambledInformation[questionNr - 1, 2];
-                    btnAnsr2.Text = scrambledInformation[questionNr - 1, 3];
-                    btnAnsr3.Text = scrambledInformation[questionNr - 1, 4];
-                    btnAnsr4.Text = scrambledInformation[questionNr - 1, 5];
-                }
-                
-                else 
-                {
-                    timer10s.Stop();
-                    prgBar10s.Value = 0;
-                    tc.SelectedTab = tabMenu;
-                    MessageBox.Show(rightAnswers + " / 10");
-                }
-                
-            }
-            else
-            {
-                questionNr++;
-
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"../../Sound/GameFailure.wav");
-                player.Play();
-
-                if (questionNr < 11)
-                {
-                    rtbxQuestion.Text = scrambledInformation[questionNr - 1, 0];
-
-                    btnAnsr1.Text = scrambledInformation[questionNr - 1, 2];
-                    btnAnsr2.Text = scrambledInformation[questionNr - 1, 3];
-                    btnAnsr3.Text = scrambledInformation[questionNr - 1, 4];
-                    btnAnsr4.Text = scrambledInformation[questionNr - 1, 5];
-                }
-                else
-                {
-                    timer10s.Stop();
-                    prgBar10s.Value = 0;
-                    tc.SelectedTab = tabMenu;
-                    MessageBox.Show(rightAnswers + " / 10");
-                }
-            }
-
-            lblScore.Text = rightAnswers + " / 10";
+            AnswerQuestion(((Control)sender).Text);
         }
 
         private void btnAnsr2_Click(object sender, EventArgs e)
         {
-            timer10s.Start();
-            prgBar10s.Value = 0;
-            if (btnAnsr2.Text == scrambledInformation[questionNr - 1, 1].ToString())
-            {
-                rightAnswers++;
-                questionNr++;
-
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"../../Sound/GameRight.wav");
-                player.Play();
-
-                if (questionNr < 11)
-                {
-                    rtbxQuestion.Text = scrambledInformation[questionNr - 1, 0];
-
-                    btnAnsr1.Text = scrambledInformation[questionNr - 1, 2];
-                    btnAnsr2.Text = scrambledInformation[questionNr - 1, 3];
-                    btnAnsr3.Text = scrambledInformation[questionNr - 1, 4];
-                    btnAnsr4.Text = scrambledInformation[questionNr - 1, 5];
-                }
-                else
-                {
-                    timer10s.Stop();
-                    prgBar10s.Value = 0;
-                    tc.SelectedTab = tabMenu;
-                    MessageBox.Show(rightAnswers + " / 10");
-                }
-
-            }
-            else
-            {
-                questionNr++;
-
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"../../Sound/GameFailure.wav");
-                player.Play();
-
-                if (questionNr < 11)
-                {
-                    rtbxQuestion.Text = scrambledInformation[questionNr - 1, 0];
-
-                    btnAnsr1.Text = scrambledInformation[questionNr - 1, 2];
-                    btnAnsr2.Text = scrambledInformation[questionNr - 1, 3];
-                    btnAnsr3.Text = scrambledInformation[questionNr - 1, 4];
-                    btnAnsr4.Text = scrambledInformation[questionNr - 1, 5];
-                }
-                else
-                {
-                    timer10s.Stop();
-                    prgBar10s.Value = 0;
-                    tc.SelectedTab = tabMenu;
-                    MessageBox.Show(rightAnswers + " / 10");
-                }
-            }
-
-            lblScore.Text = rightAnswers + " / 10";
+            AnswerQuestion(((Control)sender).Text);
         }
 
         private void btnAnsr3_Click(object sender, EventArgs e)
         {
-            timer10s.Start();
-            prgBar10s.Value = 0;
-            if (btnAnsr3.Text == scrambledInformation[questionNr - 1, 1].ToString())
-            {
-                rightAnswers++;
-                questionNr++;
-
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"../../Sound/GameRight.wav");
-                player.Play();
-
-                if (questionNr < 11)
-                {
-                    rtbxQuestion.Text = scrambledInformation[questionNr - 1, 0];
-
-                    btnAnsr1.Text = scrambledInformation[questionNr - 1, 2];
-                    btnAnsr2.Text = scrambledInformation[questionNr - 1, 3];
-                    btnAnsr3.Text = scrambledInformation[questionNr - 1, 4];
-                    btnAnsr4.Text = scrambledInformation[questionNr - 1, 5];
-                }
-                else
-                {
-                    timer10s.Stop();
-                    prgBar10s.Value = 0;
-                    tc.SelectedTab = tabMenu;
-                    MessageBox.Show(rightAnswers + " / 10");
-                }
-
-            }
-            else
-            {
-                questionNr++;
-
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"../../Sound/GameFailure.wav");
-                player.Play();
-
-                if (questionNr < 11)
-                {
-                    rtbxQuestion.Text = scrambledInformation[questionNr - 1, 0];
-
-                    btnAnsr1.Text = scrambledInformation[questionNr - 1, 2];
-                    btnAnsr2.Text = scrambledInformation[questionNr - 1, 3];
-                    btnAnsr3.Text = scrambledInformation[questionNr - 1, 4];
-                    btnAnsr4.Text = scrambledInformation[questionNr - 1, 5];
-                }
-                else
-                {
-                    timer10s.Stop();
-                    prgBar10s.Value = 0;
-                    tc.SelectedTab = tabMenu;
-                    MessageBox.Show(rightAnswers + " / 10");
-                }
-            }
-
-            lblScore.Text = rightAnswers + " / 10";
+            AnswerQuestion(((Control)sender).Text);
         }
 
         private void btnAnsr4_Click(object sender, EventArgs e)
         {
+            AnswerQuestion(((Control)sender).Text);
+        }
+
+        private void btnQuizCreator_Click(object sender, EventArgs e)
+        {
+            tc.SelectedTab = tabCreator;
+        }
+
+        private void btnResults_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(prevScore[0]);
+        }
+
+        private void AnswerQuestion(string questionAnswer)
+        {
             timer10s.Start();
             prgBar10s.Value = 0;
-            if (btnAnsr4.Text == scrambledInformation[questionNr - 1, 1].ToString())
+            if (questionAnswer == scrambledInformation[questionNr - 1, 1].ToString())
             {
                 rightAnswers++;
                 questionNr++;
@@ -557,15 +412,5 @@ namespace Quizz_T4
 
             lblScore.Text = rightAnswers + " / 10";
         }
-
-        private void btnQuizCreator_Click(object sender, EventArgs e)
-        {
-            tc.SelectedTab = tabCreator;
-        }
-
-        private void btnResults_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(prevScore[0]);
-    }
     }
 }
