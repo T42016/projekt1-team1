@@ -56,11 +56,6 @@
             this.lblError1 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.tbxQuizzName = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
-            this.lboxQuiz = new System.Windows.Forms.ListBox();
-            this.lboxQuestions = new System.Windows.Forms.ListBox();
             this.rtbnQuestion = new System.Windows.Forms.RichTextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblAnswer4 = new System.Windows.Forms.Label();
@@ -73,6 +68,7 @@
             this.tbxAnswer1 = new System.Windows.Forms.TextBox();
             this.lblQuestion = new System.Windows.Forms.Label();
             this.timer10s = new System.Windows.Forms.Timer(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tc.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.tabQuiz.SuspendLayout();
@@ -288,11 +284,6 @@
             this.tabCreator.Controls.Add(this.lblError1);
             this.tabCreator.Controls.Add(this.lblName);
             this.tabCreator.Controls.Add(this.tbxQuizzName);
-            this.tabCreator.Controls.Add(this.button2);
-            this.tabCreator.Controls.Add(this.button1);
-            this.tabCreator.Controls.Add(this.btnRemove);
-            this.tabCreator.Controls.Add(this.lboxQuiz);
-            this.tabCreator.Controls.Add(this.lboxQuestions);
             this.tabCreator.Controls.Add(this.rtbnQuestion);
             this.tabCreator.Controls.Add(this.btnAdd);
             this.tabCreator.Controls.Add(this.lblAnswer4);
@@ -396,49 +387,6 @@
             this.tbxQuizzName.TabIndex = 1;
             this.tbxQuizzName.TextChanged += new System.EventHandler(this.tbxQuizzName_TextChanged);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(238, 293);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Add quiz";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(238, 264);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Remove question";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.Location = new System.Drawing.Point(365, 264);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(110, 23);
-            this.btnRemove.TabIndex = 12;
-            this.btnRemove.Text = "Remove quiz";
-            this.btnRemove.UseVisualStyleBackColor = true;
-            // 
-            // lboxQuiz
-            // 
-            this.lboxQuiz.FormattingEnabled = true;
-            this.lboxQuiz.Location = new System.Drawing.Point(365, 20);
-            this.lboxQuiz.Name = "lboxQuiz";
-            this.lboxQuiz.Size = new System.Drawing.Size(110, 238);
-            this.lboxQuiz.TabIndex = 11;
-            // 
-            // lboxQuestions
-            // 
-            this.lboxQuestions.FormattingEnabled = true;
-            this.lboxQuestions.Location = new System.Drawing.Point(238, 20);
-            this.lboxQuestions.Name = "lboxQuestions";
-            this.lboxQuestions.Size = new System.Drawing.Size(110, 238);
-            this.lboxQuestions.TabIndex = 8;
-            // 
             // rtbnQuestion
             // 
             this.rtbnQuestion.Location = new System.Drawing.Point(80, 75);
@@ -526,6 +474,7 @@
             this.tbxAnswer1.Size = new System.Drawing.Size(100, 20);
             this.tbxAnswer1.TabIndex = 3;
             this.tbxAnswer1.Text = "Correct Answer";
+            this.toolTip1.SetToolTip(this.tbxAnswer1, "Write correct answer to the question here");
             this.tbxAnswer1.Click += new System.EventHandler(this.tbxAnswer1_Click);
             this.tbxAnswer1.TextChanged += new System.EventHandler(this.tbxAnswer1_TextChanged);
             this.tbxAnswer1.Leave += new System.EventHandler(this.tbxAnswer1_Leave);
@@ -587,11 +536,6 @@
         private System.Windows.Forms.Button btnChooseQuiz;
         private System.Windows.Forms.Button btnResults;
         private System.Windows.Forms.Button btnQuizCreator;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnRemove;
-        private System.Windows.Forms.ListBox lboxQuiz;
-        private System.Windows.Forms.ListBox lboxQuestions;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox tbxQuizzName;
         private System.Windows.Forms.Label lblError6;
@@ -611,6 +555,7 @@
         private System.Windows.Forms.Button btnAnsr1;
         private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
