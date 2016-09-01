@@ -30,6 +30,11 @@ namespace Quizz_T4
         public Form1()
         {
             InitializeComponent();
+            btnAnsr1.Enabled = false;
+            btnAnsr2.Enabled = false;
+            btnAnsr3.Enabled = false;
+            btnAnsr4.Enabled = false;
+            btnQuit.Enabled = false;
         }
 
 
@@ -41,6 +46,11 @@ namespace Quizz_T4
             }
             else
             {
+                btnAnsr1.Enabled = true;
+                btnAnsr2.Enabled = true;
+                btnAnsr3.Enabled = true;
+                btnAnsr4.Enabled = true;
+                btnQuit.Enabled = true;
                 timer10s.Start();
                 tc.SelectedTab = tabQuiz;
                 gbxQuiz.Enabled = false;
@@ -87,30 +97,6 @@ namespace Quizz_T4
             if (tbxAnswer1.Text == "" || tbxAnswer2.Text == "" || tbxAnswer3.Text == "" || tbxAnswer4.Text == "" || rtbnQuestion.Text == "" || tbxQuizzName.Text == "")
             {
                 MessageBox.Show("You have to fill in all the fields");
-                if (tbxAnswer1.Text == "")
-                {
-                    lblError3.Visible = true;
-                }
-                else if (tbxAnswer2.Text == "")
-                {
-                    lblError4.Visible = true;
-                }
-                else if (tbxAnswer3.Text == "")
-                {
-                    lblError5.Visible = true;
-                }
-                else if (tbxAnswer4.Text == "")
-                {
-                    lblError6.Visible = true;
-                }
-                else if (tbxQuizzName.Text == "")
-                {
-                    lblError1.Visible = true;
-                }
-                else if (rtbnQuestion.Text == "")
-                {
-                    lblError2.Visible = true;
-                }
             }
 
             else if (tbxAnswer1.Text.Contains("|") || tbxAnswer2.Text.Contains("|") || tbxAnswer3.Text.Contains("|") || tbxAnswer4.Text.Contains("|") || rtbnQuestion.Text.Contains("|") || tbxQuizzName.Text.Contains("|"))
