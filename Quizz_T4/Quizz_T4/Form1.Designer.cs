@@ -474,7 +474,6 @@
             this.tbxAnswer1.TabIndex = 3;
             this.tbxAnswer1.Click += new System.EventHandler(this.tbxAnswer1_Click);
             this.tbxAnswer1.TextChanged += new System.EventHandler(this.tbxAnswer1_TextChanged);
-            this.tbxAnswer1.Leave += new System.EventHandler(this.tbxAnswer1_Leave);
             // 
             // lblQuestion
             // 
