@@ -568,6 +568,12 @@ namespace Quizz_T4
             tabMenu.Enabled = true;
             tc.SelectedTab = tabMenu;
             rtbxListQuestions.Text = "";
+            tbxQuizzName.Text = "";
+            rtbnQuestion.Text = "";
+            tbxAnswer1.Text = "";
+            tbxAnswer2.Text = "";
+            tbxAnswer3.Text = "";
+            tbxAnswer4.Text = "";
         }
 
        
