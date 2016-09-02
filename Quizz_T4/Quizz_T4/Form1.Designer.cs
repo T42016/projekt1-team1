@@ -46,6 +46,8 @@
             this.btnAnsr2 = new System.Windows.Forms.Button();
             this.btnAnsr1 = new System.Windows.Forms.Button();
             this.tabCreator = new System.Windows.Forms.TabPage();
+            this.lblExisting = new System.Windows.Forms.Label();
+            this.rtbxListQuestions = new System.Windows.Forms.RichTextBox();
             this.btnCreatorToMenu = new System.Windows.Forms.Button();
             this.lblError6 = new System.Windows.Forms.Label();
             this.lblError5 = new System.Windows.Forms.Label();
@@ -262,6 +264,8 @@
             // 
             // tabCreator
             // 
+            this.tabCreator.Controls.Add(this.lblExisting);
+            this.tabCreator.Controls.Add(this.rtbxListQuestions);
             this.tabCreator.Controls.Add(this.btnCreatorToMenu);
             this.tabCreator.Controls.Add(this.lblError6);
             this.tabCreator.Controls.Add(this.lblError5);
@@ -290,6 +294,23 @@
             this.tabCreator.TabIndex = 2;
             this.tabCreator.Text = "Quiz creator";
             this.tabCreator.UseVisualStyleBackColor = true;
+            // 
+            // lblExisting
+            // 
+            this.lblExisting.AutoSize = true;
+            this.lblExisting.Location = new System.Drawing.Point(345, 36);
+            this.lblExisting.Name = "lblExisting";
+            this.lblExisting.Size = new System.Drawing.Size(145, 13);
+            this.lblExisting.TabIndex = 28;
+            this.lblExisting.Text = "Existing questions in the quiz:";
+            // 
+            // rtbxListQuestions
+            // 
+            this.rtbxListQuestions.Location = new System.Drawing.Point(348, 55);
+            this.rtbxListQuestions.Name = "rtbxListQuestions";
+            this.rtbxListQuestions.Size = new System.Drawing.Size(134, 243);
+            this.rtbxListQuestions.TabIndex = 27;
+            this.rtbxListQuestions.Text = "";
             // 
             // btnCreatorToMenu
             // 
@@ -555,6 +576,8 @@
         private System.Windows.Forms.Button btnAnsr2;
         private System.Windows.Forms.Button btnAnsr1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.RichTextBox rtbxListQuestions;
+        private System.Windows.Forms.Label lblExisting;
     }
 }
 

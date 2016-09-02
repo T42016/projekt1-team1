@@ -71,11 +71,16 @@ namespace Quizz_T4
 
         }
 
+        private void rtbxListQuetions_Update(string question)
+        {
+            rtbxListQuestions.Text += (question + "\n");
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             questions.Add(new Query(rtbnQuestion.Text));
             answers.Add(new Answers(tbxAnswer1.Text, tbxAnswer2.Text, tbxAnswer3.Text, tbxAnswer4.Text));
             Save();
+            rtbxListQuetions_Update(rtbnQuestion.Text);
         }
 
         /// <summary>
@@ -564,6 +569,6 @@ namespace Quizz_T4
             tc.SelectedTab = tabMenu;
         }
 
-        
+       
     }
 }
