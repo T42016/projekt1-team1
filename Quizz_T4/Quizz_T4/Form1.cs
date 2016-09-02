@@ -73,12 +73,9 @@ namespace Quizz_T4
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
-
             questions.Add(new Query(rtbnQuestion.Text));
             answers.Add(new Answers(tbxAnswer1.Text, tbxAnswer2.Text, tbxAnswer3.Text, tbxAnswer4.Text));
             Save();
-
         }
 
         /// <summary>
@@ -289,7 +286,7 @@ namespace Quizz_T4
                 
             }
         }
-
+        
         private void tbxQuizzName_TextChanged(object sender, EventArgs e)
         {
             IsTextValid.isTextvalid(lblError1, tbxQuizzName.Text);
