@@ -46,6 +46,8 @@
             this.btnAnsr2 = new System.Windows.Forms.Button();
             this.btnAnsr1 = new System.Windows.Forms.Button();
             this.tabCreator = new System.Windows.Forms.TabPage();
+            this.lblExisting = new System.Windows.Forms.Label();
+            this.rtbxListQuestions = new System.Windows.Forms.RichTextBox();
             this.btnCreatorToMenu = new System.Windows.Forms.Button();
             this.lblError6 = new System.Windows.Forms.Label();
             this.lblError5 = new System.Windows.Forms.Label();
@@ -68,7 +70,6 @@
             this.lblQuestion = new System.Windows.Forms.Label();
             this.timer10s = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.rtbxListQuestions = new System.Windows.Forms.RichTextBox();
             this.tc.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.tabQuiz.SuspendLayout();
@@ -263,6 +264,7 @@
             // 
             // tabCreator
             // 
+            this.tabCreator.Controls.Add(this.lblExisting);
             this.tabCreator.Controls.Add(this.rtbxListQuestions);
             this.tabCreator.Controls.Add(this.btnCreatorToMenu);
             this.tabCreator.Controls.Add(this.lblError6);
@@ -292,6 +294,23 @@
             this.tabCreator.TabIndex = 2;
             this.tabCreator.Text = "Quiz creator";
             this.tabCreator.UseVisualStyleBackColor = true;
+            // 
+            // lblExisting
+            // 
+            this.lblExisting.AutoSize = true;
+            this.lblExisting.Location = new System.Drawing.Point(345, 36);
+            this.lblExisting.Name = "lblExisting";
+            this.lblExisting.Size = new System.Drawing.Size(145, 13);
+            this.lblExisting.TabIndex = 28;
+            this.lblExisting.Text = "Existing questions in the quiz:";
+            // 
+            // rtbxListQuestions
+            // 
+            this.rtbxListQuestions.Location = new System.Drawing.Point(348, 55);
+            this.rtbxListQuestions.Name = "rtbxListQuestions";
+            this.rtbxListQuestions.Size = new System.Drawing.Size(134, 243);
+            this.rtbxListQuestions.TabIndex = 27;
+            this.rtbxListQuestions.Text = "";
             // 
             // btnCreatorToMenu
             // 
@@ -474,9 +493,7 @@
             this.tbxAnswer1.Name = "tbxAnswer1";
             this.tbxAnswer1.Size = new System.Drawing.Size(219, 20);
             this.tbxAnswer1.TabIndex = 3;
-            this.tbxAnswer1.Click += new System.EventHandler(this.tbxAnswer1_Click);
             this.tbxAnswer1.TextChanged += new System.EventHandler(this.tbxAnswer1_TextChanged);
-            this.tbxAnswer1.Leave += new System.EventHandler(this.tbxAnswer1_Leave);
             // 
             // lblQuestion
             // 
@@ -497,14 +514,6 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.InitialDirectory = "Quizzes";
             this.openFileDialog1.RestoreDirectory = true;
-            // 
-            // rtbxListQuestions
-            // 
-            this.rtbxListQuestions.Location = new System.Drawing.Point(349, 12);
-            this.rtbxListQuestions.Name = "rtbxListQuestions";
-            this.rtbxListQuestions.Size = new System.Drawing.Size(134, 286);
-            this.rtbxListQuestions.TabIndex = 27;
-            this.rtbxListQuestions.Text = "";
             // 
             // Form1
             // 
@@ -568,6 +577,7 @@
         private System.Windows.Forms.Button btnAnsr1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.RichTextBox rtbxListQuestions;
+        private System.Windows.Forms.Label lblExisting;
     }
 }
 

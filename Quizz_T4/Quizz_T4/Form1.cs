@@ -71,14 +71,18 @@ namespace Quizz_T4
 
         }
 
+        private void rtbxListQuetions_Update(string question)
+        {
+            rtbxListQuestions.Text += (question + "\n");
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
-
             questions.Add(new Query(rtbnQuestion.Text));
             answers.Add(new Answers(tbxAnswer1.Text, tbxAnswer2.Text, tbxAnswer3.Text, tbxAnswer4.Text));
             Save();
 
+            rtbxListQuetions_Update(rtbnQuestion.Text);
         }
 
         /// <summary>
@@ -288,26 +292,6 @@ namespace Quizz_T4
                 }
                 
             }
-        }
-
-        private void tbxAnswer1_Click(object sender, EventArgs e)
-        {
-            tbxAnswer1.Text = "";
-            tbxAnswer1.ForeColor = Color.Black;
-        }
-
-        private void tbxAnswer1_Leave(object sender, EventArgs e)
-        {
-            if (tbxAnswer1.Text != "")
-            {
-
-            }
-            else
-            {
-                tbxAnswer1.ForeColor = Color.DarkGray;
-                tbxAnswer1.Text = "Correct Answer";
-            }
-               
         }
 
         private void tbxQuizzName_TextChanged(object sender, EventArgs e)
@@ -587,6 +571,6 @@ namespace Quizz_T4
             tc.SelectedTab = tabMenu;
         }
 
-        
+       
     }
 }
