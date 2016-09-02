@@ -71,11 +71,24 @@ namespace Quizz_T4
 
         }
 
+        private void rtbxListQuetions_Update(string question)
+        {
+<<<<<<< HEAD
+            questions.Add(new Query(rtbnQuestion.Text));
+            answers.Add(new Answers(tbxAnswer1.Text, tbxAnswer2.Text, tbxAnswer3.Text, tbxAnswer4.Text));
+            Save();
+=======
+            rtbxListQuestions.Text += (question + "\n");
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             questions.Add(new Query(rtbnQuestion.Text));
             answers.Add(new Answers(tbxAnswer1.Text, tbxAnswer2.Text, tbxAnswer3.Text, tbxAnswer4.Text));
             Save();
+
+            rtbxListQuetions_Update(rtbnQuestion.Text);
+>>>>>>> origin/feature-quizcreatorlistquestions
         }
 
         /// <summary>
@@ -287,10 +300,10 @@ namespace Quizz_T4
             }
         }
 <<<<<<< HEAD
-
-=======
         
->>>>>>> origin/bugs
+=======
+
+>>>>>>> origin/feature-quizcreatorlistquestions
         private void tbxQuizzName_TextChanged(object sender, EventArgs e)
         {
             IsTextValid.isTextvalid(lblError1, tbxQuizzName.Text);
@@ -568,6 +581,6 @@ namespace Quizz_T4
             tc.SelectedTab = tabMenu;
         }
 
-        
+       
     }
 }
