@@ -286,13 +286,7 @@ namespace Quizz_T4
                 
             }
         }
-
-        private void tbxAnswer1_Click(object sender, EventArgs e)
-        {
-            tbxAnswer1.Text = "";
-        }
         
-
         private void tbxQuizzName_TextChanged(object sender, EventArgs e)
         {
             IsTextValid.isTextvalid(lblError1, tbxQuizzName.Text);
