@@ -91,6 +91,7 @@ namespace Quizz_T4
         private void Save()
         {
 
+            rtbxListQuestions.Text = "";
 
             string questionfile = @"stockquiz\" + tbxQuizzName.Text + "_question" + ".quiz";
             string answerfile = @"stockquiz\" + tbxQuizzName.Text + "_answer" + ".quiz";
@@ -566,6 +567,7 @@ namespace Quizz_T4
             tabCreator.Enabled = false;
             tabMenu.Enabled = true;
             tc.SelectedTab = tabMenu;
+            rtbxListQuestions.Text = "";
         }
 
        
