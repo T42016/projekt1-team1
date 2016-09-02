@@ -17,6 +17,7 @@ namespace Quizz_T4
         static int iteration = 1;
         private int rightAnswers;
         private int questionNr;
+        
 
 
         List<Query> questions = new List<Query>();
@@ -30,16 +31,8 @@ namespace Quizz_T4
         public Form1()
         {
             InitializeComponent();
-<<<<<<< HEAD
-            btnAnsr1.Enabled = false;
-            btnAnsr2.Enabled = false;
-            btnAnsr3.Enabled = false;
-            btnAnsr4.Enabled = false;
-            btnQuit.Enabled = false;
-=======
             tabQuiz.Enabled = false;
             tabCreator.Enabled = false;
->>>>>>> origin/develop
         }
 
 
@@ -51,24 +44,18 @@ namespace Quizz_T4
             }
             else
             {
-<<<<<<< HEAD
-                btnAnsr1.Enabled = true;
-                btnAnsr2.Enabled = true;
-                btnAnsr3.Enabled = true;
-                btnAnsr4.Enabled = true;
-                btnQuit.Enabled = true;
-=======
                 tabQuiz.Enabled = true;
                 tabMenu.Enabled = false;
-
->>>>>>> origin/develop
-                timer10s.Start();
                 tc.SelectedTab = tabQuiz;
-                gbxQuiz.Enabled = false;
-                Thread.Sleep(500);
-                gbxQuiz.Enabled = true;
-                rightAnswers = 0;
+
+                timer10s.Start();
                 prgBar10s.Value = 0;
+
+                tabQuiz.Enabled = false;
+                Thread.Sleep(500);
+                tabQuiz.Enabled = true;
+
+                rightAnswers = 0;
                 questionNr = 1;
                 lblScore.Text = rightAnswers + " / 10";
 
@@ -86,12 +73,9 @@ namespace Quizz_T4
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
-
             questions.Add(new Query(rtbnQuestion.Text));
             answers.Add(new Answers(tbxAnswer1.Text, tbxAnswer2.Text, tbxAnswer3.Text, tbxAnswer4.Text));
             Save();
-
         }
 
         /// <summary>
@@ -167,7 +151,7 @@ namespace Quizz_T4
                     }
 
 
-                    if (iteration > 10)
+                    if (iteration >= 10)
                     {
 
                         File.WriteAllText(questionfile, questionlist);
@@ -182,41 +166,80 @@ namespace Quizz_T4
             }
         }
 
-        private void Load()
+        private void LoadFiles()
         {
-            answers.Clear();
-            /*
-            DirectoryInfo di = new DirectoryInfo("C:\\");
-            var fileInfo = di.GetFiles("*.quizz", SearchOption.AllDirectories);
-            foreach (var file in fileInfo)
+            openFileDialog1.InitialDirectory = @"..\stockquiz";
+            openFileDialog1.Filter = "Text Files (.quiz)|*.quiz|All Files (*.*)|*.*";
+            openFileDialog1.FilterIndex = 0;
+            openFileDialog1.RestoreDirectory = true;
+            DialogResult result = openFileDialog1.ShowDialog();
+            string file = openFileDialog1.FileName;
+            
+            if (result == DialogResult.OK)
             {
-                File.ReadAllLines(@"");
+                if (file.Contains("answer"))
+                {    
+                    answers.Clear();
+                    
+                    string[] answersLines = System.IO.File.ReadAllLines(file);
+
+                    foreach (string line in answersLines)
+                    {
+                        string[] words = line.Split('|');
+
+                        Answers answerLoad = new Answers(words[0], words[1], words[2], words[3]);
+
+                        answers.Add(answerLoad);
+                    }
+                    
+                    var pos = file.IndexOf("answer");
+                    var question = file.Remove(pos, 6).Insert(pos, "question");
+
+                    questions.Clear();
+
+                    string[] questionLines = System.IO.File.ReadAllLines(question);
+
+                    foreach (string line in questionLines)
+                    {
+                        string[] words = line.Split('|');
+
+                        Query questionLoad = new Query(words[0]);
+
+                        questions.Add(questionLoad);
+                    }
+                }
+                else
+                {
+                    questions.Clear();
+                   
+                    string[] questionLines = System.IO.File.ReadAllLines(file);
+                    
+                    foreach (string line in questionLines)
+                    {
+                        string[] words = line.Split('|');
+
+                        Query questionLoad = new Query(words[0]);
+
+                        questions.Add(questionLoad);
+                    }
+
+                    var pos = file.IndexOf("question");
+                    var answer = file.Remove(pos, 8).Insert(pos, "answer");
+
+                    answers.Clear();
+
+                    string[] answersLines = System.IO.File.ReadAllLines(answer);
+
+                    foreach (string line in answersLines)
+                    {
+                        string[] words = line.Split('|');
+
+                        Answers answerLoad = new Answers(words[0], words[1], words[2], words[3]);
+
+                        answers.Add(answerLoad);
+                    }
+                }
             }
-            */
-
-            string[] answersLines = System.IO.File.ReadAllLines(@"stockquiz\testAnswers.txt");
-
-            foreach (string line in answersLines)
-            {
-                string[] words = line.Split('|');
-
-                Answers answerLoad = new Answers(words[0], words[1], words[2], words[3]);
-
-                answers.Add(answerLoad);
-            }
-
-            questions.Clear();
-            string[] questionLines = System.IO.File.ReadAllLines(@"stockquiz\testQuestions.txt");
-
-            foreach (string line in questionLines)
-            {
-                string[] words = line.Split('|');
-
-                Query questionLoad = new Query(words[0]);
-
-                questions.Add(questionLoad);
-            }
-
         }
 
 
@@ -263,27 +286,11 @@ namespace Quizz_T4
                 
             }
         }
+<<<<<<< HEAD
 
-        private void tbxAnswer1_Click(object sender, EventArgs e)
-        {
-            tbxAnswer1.Text = "";
-            tbxAnswer1.ForeColor = Color.Black;
-        }
-
-        private void tbxAnswer1_Leave(object sender, EventArgs e)
-        {
-            if (tbxAnswer1.Text != "")
-            {
-
-            }
-            else
-            {
-                tbxAnswer1.ForeColor = Color.DarkGray;
-                tbxAnswer1.Text = "Correct Answer";
-            }
-               
-        }
-
+=======
+        
+>>>>>>> origin/bugs
         private void tbxQuizzName_TextChanged(object sender, EventArgs e)
         {
             IsTextValid.isTextvalid(lblError1, tbxQuizzName.Text);
@@ -341,12 +348,20 @@ namespace Quizz_T4
 
         private void btnChooseQuiz_Click(object sender, EventArgs e)
         {
-            Load();
+            LoadFiles();
             MessageBox.Show("Quiz loaded");
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
         {
+            rtbxQuestion.Text = "";
+
+            btnAnsr1.Text = "";
+            btnAnsr2.Text = "";
+            btnAnsr3.Text = "";
+            btnAnsr4.Text = "";
+            lblScore.Text = "";
+
             tc.SelectedTab = tabMenu;
             prgBar10s.Value = 0;
             timer10s.Stop();
@@ -415,6 +430,17 @@ namespace Quizz_T4
                 }
                 else
                 {
+                    rtbxQuestion.Text = "";
+
+                    btnAnsr1.Text = "";
+                    btnAnsr2.Text = "";
+                    btnAnsr3.Text = "";
+                    btnAnsr4.Text = "";
+                    lblScore.Text = "";
+
+                    tabQuiz.Enabled = false;
+                    tabMenu.Enabled = true;
+
                     timer10s.Stop();
                     prgBar10s.Value = 0;
                     tc.SelectedTab = tabMenu;
@@ -442,6 +468,17 @@ namespace Quizz_T4
                 }
                 else
                 {
+                    rtbxQuestion.Text = "";
+
+                    btnAnsr1.Text = "";
+                    btnAnsr2.Text = "";
+                    btnAnsr3.Text = "";
+                    btnAnsr4.Text = "";
+                    lblScore.Text = "";
+
+                    tabQuiz.Enabled = false;
+                    tabMenu.Enabled = true;
+
                     timer10s.Stop();
                     prgBar10s.Value = 0;
                     tc.SelectedTab = tabMenu;
@@ -456,7 +493,7 @@ namespace Quizz_T4
         {
             if (btnAnsr1.Text == scrambledInformation[questionNr - 1, 1].ToString())
             {
-                gbxQuiz.Enabled = false;
+                tabQuiz.Enabled = false;
                 btnAnsr1.BackColor = Color.LightGreen;
                 btnAnsr2.BackColor = Color.LightCoral;
                 btnAnsr3.BackColor = Color.LightCoral;
@@ -469,11 +506,11 @@ namespace Quizz_T4
                 btnAnsr2.BackColor = Color.Transparent;
                 btnAnsr3.BackColor = Color.Transparent;
                 btnAnsr4.BackColor = Color.Transparent;
-                gbxQuiz.Enabled = true;
+                tabQuiz.Enabled = true;
             }
             else if (btnAnsr2.Text == scrambledInformation[questionNr - 1, 1].ToString())
             {
-                gbxQuiz.Enabled = false;
+                tabQuiz.Enabled = false;
                 btnAnsr1.BackColor = Color.LightCoral;
                 btnAnsr2.BackColor = Color.LightGreen;
                 btnAnsr3.BackColor = Color.LightCoral;
@@ -486,11 +523,11 @@ namespace Quizz_T4
                 btnAnsr2.BackColor = Color.Transparent;
                 btnAnsr3.BackColor = Color.Transparent;
                 btnAnsr4.BackColor = Color.Transparent;
-                gbxQuiz.Enabled = true;
+                tabQuiz.Enabled = true;
             }
             else if (btnAnsr3.Text == scrambledInformation[questionNr - 1, 1].ToString())
             {
-                gbxQuiz.Enabled = false;
+                tabQuiz.Enabled = false;
                 btnAnsr1.BackColor = Color.LightCoral;
                 btnAnsr2.BackColor = Color.LightCoral;
                 btnAnsr3.BackColor = Color.LightGreen;
@@ -503,11 +540,11 @@ namespace Quizz_T4
                 btnAnsr2.BackColor = Color.Transparent;
                 btnAnsr3.BackColor = Color.Transparent;
                 btnAnsr4.BackColor = Color.Transparent;
-                gbxQuiz.Enabled = true;
+                tabQuiz.Enabled = true;
             }
             else
             {
-                gbxQuiz.Enabled = false;
+                tabQuiz.Enabled = false;
                 btnAnsr1.BackColor = Color.LightCoral;
                 btnAnsr2.BackColor = Color.LightCoral;
                 btnAnsr3.BackColor = Color.LightCoral;
@@ -520,14 +557,17 @@ namespace Quizz_T4
                 btnAnsr2.BackColor = Color.Transparent;
                 btnAnsr3.BackColor = Color.Transparent;
                 btnAnsr4.BackColor = Color.Transparent;
-                gbxQuiz.Enabled = true;
+                tabQuiz.Enabled = true;
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            tabCreator.Enabled = false;
+            tabMenu.Enabled = true;
             tc.SelectedTab = tabMenu;
         }
+
+        
     }
 }
