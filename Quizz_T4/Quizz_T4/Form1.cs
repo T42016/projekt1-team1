@@ -350,7 +350,6 @@ namespace Quizz_T4
         private void btnChooseQuiz_Click(object sender, EventArgs e)
         {
             LoadFiles();
-            MessageBox.Show("Quiz loaded");
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
