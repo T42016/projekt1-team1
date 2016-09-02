@@ -290,26 +290,6 @@ namespace Quizz_T4
             }
         }
 
-        private void tbxAnswer1_Click(object sender, EventArgs e)
-        {
-            tbxAnswer1.Text = "";
-            tbxAnswer1.ForeColor = Color.Black;
-        }
-
-        private void tbxAnswer1_Leave(object sender, EventArgs e)
-        {
-            if (tbxAnswer1.Text != "")
-            {
-
-            }
-            else
-            {
-                tbxAnswer1.ForeColor = Color.DarkGray;
-                tbxAnswer1.Text = "Correct Answer";
-            }
-               
-        }
-
         private void tbxQuizzName_TextChanged(object sender, EventArgs e)
         {
             IsTextValid.isTextvalid(lblError1, tbxQuizzName.Text);
